@@ -20,7 +20,7 @@
             { $zIndex: 4, width: 12 + 'vw', height: 15 + 'vw', top: 0, left: 43 + "%", $opacity: 1 },
             { $zIndex: 3, width: 12 + 'vw', height: 15 + 'vw', top: 0, left: 65 + '%', $opacity: 1 },
             { $zIndex: 2, width: 12 + 'vw', height: 15 + 'vw', top: 0, left: 85 + '%', $opacity: 1 },
-            { $zIndex: 1, width: 12 + 'vw', height: 15 + 'vw', top: 0, left: 65 + '%', $opacity: 0.1 }
+            { $zIndex: 1, width: 12 + 'vw', height: 15 + 'vw', top: 0, left: 65 + '%', $opacity: 0.01 }
         ];
 
         var $lis = $ele.find('li');
