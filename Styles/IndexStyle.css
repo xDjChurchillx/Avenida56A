@@ -77,6 +77,10 @@ section {
         border: 5px solid black;
         z-index: 20;
     }
+    .hi-slide .hi-next h1,
+    .hi-slide .hi-prev h1{
+      margin-bottom: 4px;  
+    }
 
         .hi-slide .hi-next:hover,
         .hi-slide .hi-prev:hover {
