@@ -63,7 +63,7 @@ section {
     .hi-slide .hi-next,
     .hi-slide .hi-prev {
         position: absolute;
-        width: 40px;
+        width: 37px;
         height: 40px;
         display: flex;
         justify-content: center;

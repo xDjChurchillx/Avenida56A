@@ -14,13 +14,13 @@
             //{ $zIndex: 3, width: 170, height: 218, top: 35, left: 470, $opacity: 0.7 },
             //{ $zIndex: 2, width: 130, height: 170, top: 59, left: 620, $opacity: 0.4 },
             //{ $zIndex: 1, width: 120, height: 150, top: 69, left: 500, $opacity: 0.2 }
-            { $zIndex: 1, width: 17 + 'vw', height: 20 + 'vw', top: 0, left: 20 + '%', $opacity: 0.1 },
-            { $zIndex: 2, width: 17 + 'vw', height: 20 + 'vw', top: 0, left: 0,        $opacity: 0.5 },
-            { $zIndex: 3, width: 17 + 'vw', height: 20 + 'vw', top: 0, left: 18 + '%', $opacity: 1 },
-            { $zIndex: 4, width: 17 + 'vw', height: 20 + 'vw', top: 0, left: 39 + "%", $opacity: 1 },
-            { $zIndex: 3, width: 17 + 'vw', height: 20 + 'vw', top: 0, left: 63 + '%', $opacity: 1 },
-            { $zIndex: 2, width: 17 + 'vw', height: 20 + 'vw', top: 0, left: 85 + '%', $opacity: 0.5 },
-            { $zIndex: 1, width: 17 + 'vw', height: 20 + 'vw', top: 0, left: 65 + '%', $opacity: 0.01 }
+            { $zIndex: 1, width: 8 + 'vw', height: 10 + 'vw', top: 0, left: 10 + '%', $opacity: 0.1 },
+            {$zIndex: 2,width: 8 + 'vw',height: 10 + 'vw',top: 0,left: 0,$opacity: 0.5},
+            {$zIndex: 3,width: 8 + 'vw',height: 10 + 'vw',top: 0,left: 9 + '%',$opacity: 1},
+            {$zIndex: 4,width: 8 + 'vw',height: 10 + 'vw',top: 0,left: 20 + "%",$opacity: 1},
+            {$zIndex: 3,width: 8 + 'vw',height: 10 + 'vw',top: 0,left: 32 + '%',$opacity: 1},
+            {$zIndex: 2,width: 8 + 'vw',height: 10 + 'vw',top: 0,left: 42 + '%',$opacity: 0.5},
+            {$zIndex: 1,width: 8 + 'vw',height: 10 + 'vw',top: 0,left: 25 + '%',$opacity: 0.01}
         ];
 
         var $lis = $ele.find('li');
