@@ -69,12 +69,12 @@ section {
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        background-color: #F0EFEF;
+        background-color: transparent;
         color: black;
         transition: all 0.7s;
         font-family: "DM Sans", sans-serif;
         font-size: 40px;
-        border: 5px solid black;
+        border: 1px solid black;
         z-index: 20;
     }
     .hi-slide .hi-next p,
