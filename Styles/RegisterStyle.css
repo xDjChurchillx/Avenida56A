@@ -1,0 +1,129 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.content {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    position: absolute;
+    width: 600px;
+    height: fit-content;
+    background: #222;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px black;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+    .content h2 {
+        font-size: 2em;
+        color: white;
+        text-transform: uppercase;
+    }
+    .content p {
+        color: white;
+    }
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+    form .inputBox {
+        position: relative;
+        width: 100%;
+    }
+
+        form .inputBox input {
+            position: relative;
+            width: 100%;
+            background: #333;
+            border: none;
+            outline: none;
+            padding: 25px 10px 7.5px;
+            border-radius: 4px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 1em;
+        }
+
+        form .inputBox label {
+            position: absolute;
+            left: 0;
+            padding: 15px 10px;
+            font-style: normal;
+            color: white;
+            transition: 0.5s;
+            pointer-events: none;
+        }
+
+        form .inputBox input:focus ~ label,
+        form .inputBox input:valid ~ label {
+            transform: translateY(-7.5px);
+            font-size: 0.8em;
+            color: #fff;
+        }
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s !important;
+}
+
+form input[type="submit"]:active {
+    opacity: 0.6;
+}
+
+form button {
+    padding: 10px;
+    background-color: white;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.35em;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+}
+
+    form button:hover {
+        background-color: #b4b4b4;
+    }
+
+form span {
+    color: red;
+    font-size: 14px;
+    display: block;
+    margin-top: 4px;
+}
+
+form .check-container {
+    text-align: left; /* Alinea los elementos a la izquierda */
+    color: white; /* Cambia el color del texto a blanco */
+    align-items: center;
+}
+
+    form .check-container label {
+        margin: 10px;
+        width: fit-content;
+        height: fit-content;
+    }
+
+    form .check-container input {
+        margin-top: 5px;
+        width: 20px;
+        height: 20px;
+    }

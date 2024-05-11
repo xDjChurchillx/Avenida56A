@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avenida56A</title>
+    <!--/Ref/-->
+    <link href="../Styles/GeneralStyle.css" rel="stylesheet" />
+    <!--/Ref/-->
+    <link href="../Styles/AccountStyle.css" rel="stylesheet" />
+    <!--/Ref/-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="menu-container">
+            <div class="menu-icon">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <div class="menu-box">
+                <nav class="main-nav" role="navigation">
+                    <ul class="menu">
+                        <!--/Ref/-->
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li id="Perfil">
+                            <a href="#">Perfil</a>
+                            <ul class="hidden-menu">
+                                <!--/Ref/-->
+                                <li class="back"><a href="#" id="BackMenu"><img src="../Resources/Iconos/flecha.png" alt="Icono de flecha" />Perfil</a></li>
+                                <!--/Ref/-->
+                                <li><a id="alogin" href="../Account/Login.html">Iniciar sesión</a></li>
+                                <!--/Ref/-->
+                                <li><a href="../Account/Register.html">Crear Cuenta</a></li>
+                                <!--/Ref/-->
+                                <li><a href="../Account/Purchases.html">Compras</a></li>
+                                <li><a href="#">Idioma</a></li>
+                                <li id="CerrarSes"><a href="#">Cerrar sesión</a></li>
+                            </ul>
+                        </li>
+                        <li id="Tienda">
+                            <a href="#">Tienda</a>
+                            <ul class="hidden-menu">
+                                <!--/Ref/-->
+                                <li class="back"><a href="#" id="BackMenu"><img src="../Resources/Iconos/flecha.png" alt="Icono de flecha" />Tienda</a></li>
+                                <!--/Ref/-->
+                                <li><a href="../Store/Store.html?filter=1">Mujer</a></li>
+                                <!--/Ref/-->
+                                <li><a href="../Store/Store.html?filter=0">Hombre</a></li>
+                                <!--/Ref/-->
+                                <li><a href="../Store/Store.html?filter=5">Accesorios</a></li>
+                            </ul>
+                        </li>
+                        <!--/Ref/-->
+                        <li><a href="../LookBook.html">LookBook</a></li>
+                        <!--/Ref/-->
+                        <li><a href="../Contact.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="right-container">
+            <div id="searchBox" class="search-box">
+                <button id="Lupa" class="btn-search"><i class="fas fa-search"></i></button>
+                <input id="Filtro" type="text" class="input-search" placeholder="Type to Search...">
+            </div>
+
+            <!--/Ref/-->
+            <a href="../Store/Cart.html"><img src="../Resources/Iconos/cart.png" alt="Icono Carrito" /></a>
+        </div>
+
+
+    </header>
+    <!--/Ref/-->
+    <script src="../Scripts/General.js"></script>
+    <main>
+        <h1>Mi Cuenta</h1>
+
+    </main>
+    <script src="../Scripts/Account.js"></script>
+</body>
+
+</html>

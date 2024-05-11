@@ -1,0 +1,164 @@
+﻿let menu_icon_box = document.querySelector(".menu-icon");
+let menu_box = document.querySelector(".menu-box");
+let back = document.querySelectorAll(".back");
+let Logout = document.querySelector("#CerrarSes");
+let Login = document.querySelector("#alogin");
+let Perfil = document.querySelector("#Perfil");
+let Tienda = document.querySelector("#Tienda");
+//busqueda
+let Filtro = document.querySelector("#Filtro");
+let Lupa = document.querySelector("#Lupa");
+let SearchBox = document.querySelector("#searchBox");
+let OpenSearch = false;
+let OpenSearchinput = false;
+let timeclose;
+//userinfo
+let correo = null;
+let nombre = null;
+let contra = null;
+let Avn56User = null;
+
+
+
+if (menu_icon_box !== null) {
+    menu_icon_box.onclick = function () {
+        menu_icon_box.classList.toggle("active");
+        menu_box.classList.toggle("active_menu-box");
+        Perfil.classList.remove("active");
+        Tienda.classList.remove("active");
+    }
+}
+if (Logout !== null) {
+    Logout.onclick = function () {
+        localStorage.removeItem('Avn56User');
+        sessionStorage.removeItem('Avn56User');
+        location.reload(); // Esto recargará la página
+    }
+}
+if (document !== null ) {
+    document.onclick = function (e) {
+        if (!menu_icon_box.contains(e.target) && !menu_box.contains(e.target)) {
+            menu_icon_box.classList.remove("active");
+            menu_box.classList.remove("active_menu-box");
+            Perfil.classList.remove("active");
+            Tienda.classList.remove("active");
+        }
+    }
+}
+if (Lupa !== null) {
+    Lupa.onclick = function (e) {
+        clearTimeout(timeclose);
+        if (Lupa.classList.contains("btn-search-Active")) {
+            if (Filtro.value === "") {
+               //DESActivar busqueda
+                OpenSearch = false;
+                closeSearch();
+            } else {
+                   //busqueda
+                window.location.href = window.location.origin + "/Store/Store.html?filter=" + Filtro.value;
+            }
+        } else {
+           //Activar busqueda
+            OpenSearch = true;
+            Lupa.classList.add("btn-search-Active");
+            Filtro.classList.add("input-search-Active");
+        }  
+    }
+}
+if (Filtro !== null) {
+    Filtro.addEventListener('input', async () => {
+        //escriben busqueda
+        if (Filtro.value === "") {
+            OpenSearchinput = false;
+            timeclose = setTimeout(closeSearch, 10000);
+        } else {
+            clearTimeout(timeclose);
+            OpenSearchinput = true;
+        }
+    });
+    Filtro.addEventListener('mousedown', async () => {
+        //click busqueda
+            clearTimeout(timeclose);
+            OpenSearchinput = true;  
+
+    });
+}
+if (SearchBox !== null) {
+
+    SearchBox.addEventListener('mouseleave', async () => {
+        //mouse sale busqueda
+        if (!OpenSearchinput) {
+            if (OpenSearch) {
+                clearTimeout(timeclose);
+                timeclose = setTimeout(closeSearch, 5000);
+            }
+        } 
+    });
+    SearchBox.addEventListener('mouseenter', async () => {
+       //mouse entra busqueda
+        clearTimeout(timeclose);
+    });
+}
+
+function closeSearch() {
+     //DESActivar busqueda
+    if (!OpenSearchinput) {
+        Lupa.classList.remove("btn-search-Active");
+        Filtro.classList.remove("input-search-Active");
+    }
+                  
+    
+}
+
+
+if (Perfil !== null) {
+    Perfil.onclick = function (e) {
+        Perfil.classList.toggle("active");
+    }
+}
+if (Tienda !== null) {
+    Tienda.onclick = function (e) {
+        Tienda.classList.toggle("active");
+    }
+}
+if (back !== null) {
+    back.forEach(elemento => {
+        elemento.onclick = volverMenu;
+    });
+}
+
+function volverMenu() {
+    menu_box.classList.remove("active");
+}
+document.addEventListener("DOMContentLoaded", function () {
+    Logout.classList.toggle("desactivar");
+    var usuarioGuardado = sessionStorage.getItem('Avn56User');
+    if (usuarioGuardado) {
+        // Convertir los datos de JSON a objeto
+        Avn56User = JSON.parse(usuarioGuardado);
+
+        correo = Avn56User[0].correo;
+        contra = Avn56User[0].pswrd;
+      
+    } else {
+        var Avn56UserString = localStorage.getItem('Avn56User');
+        if (Avn56UserString !== null) {
+            sessionStorage.setItem('Avn56User', Avn56UserString);
+            Avn56User = JSON.parse(Avn56UserString);
+            correo = Avn56User[0].correo;
+            nombre = Avn56User[0].nombre;
+            contra = Avn56User[0].pswrd;
+
+        } 
+    }
+    if (correo !== null) {
+       
+        Login.textContent = "Cuenta";
+        let href = Login.getAttribute("href");
+        var newHref = href.replace("Login.html", "MyAccount.html")
+        // Cambiar el href del elemento a "cuenta.html"
+        Login.setAttribute("href", newHref);
+        Logout.classList.toggle("desactivar");
+    }
+   
+});
