@@ -73,6 +73,8 @@ section {
         background-color: transparent;
         color: black;
         transition: all 0.7s;
+        font-family: "DM Sans", sans-serif;
+      
         font-size: 20px;
         font-weight: bold;
         z-index: 20;
