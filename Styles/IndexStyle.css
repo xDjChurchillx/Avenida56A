@@ -66,16 +66,14 @@ section {
         width: 40px;
         height: 40px;
         display: flex;
-        justify-content: center; 
-        align-items: center; 
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
-        background-color: transparent;
+        background-color: #F0EFEF;
         color: black;
         transition: all 0.7s;
         font-family: "DM Sans", sans-serif;
-      
         font-size: 40px;
-        font-weight: bold;
         z-index: 20;
     }
 
