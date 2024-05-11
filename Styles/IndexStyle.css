@@ -85,12 +85,12 @@ section {
         }
 
     .hi-slide .hi-prev {
-        top: -10px;
+        top: -50px;
         right: -40px;
     }
 
     .hi-slide .hi-next {
-        top: 0px;
+        top: -50px;
         right: -59px;
     }
 
