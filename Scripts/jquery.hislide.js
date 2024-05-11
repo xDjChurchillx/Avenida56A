@@ -17,7 +17,7 @@
             { $zIndex: 1, width: 12 + 'vw', height: 15 + 'vw', top: 0, left: 20 + '%', $opacity: 0.1 },
             { $zIndex: 2, width: 12 + 'vw', height: 15 + 'vw', top: 0, left: 0,        $opacity: 1 },
             { $zIndex: 3, width: 12 + 'vw', height: 15 + 'vw', top: 0, left: 18 + '%', $opacity: 1 },
-            { $zIndex: 4, width: 12 + 'vw', height: 15 + 'vw', top: 0, left: 39 + "%", $opacity: 1 },
+            { $zIndex: 4, width: 12 + 'vw', height: 15 + 'vw', top: 0, left: 43 + "%", $opacity: 1 },
             { $zIndex: 3, width: 12 + 'vw', height: 15 + 'vw', top: 0, left: 63 + '%', $opacity: 1 },
             { $zIndex: 2, width: 12 + 'vw', height: 15 + 'vw', top: 0, left: 85 + '%', $opacity: 1 },
             { $zIndex: 1, width: 12 + 'vw', height: 15 + 'vw', top: 0, left: 70 + '%', $opacity: 0.1 }
