@@ -85,7 +85,7 @@ section {
         }
 
     .hi-slide .hi-prev {
-        top: 0px;
+        top: -10px;
         right: -40px;
     }
 
