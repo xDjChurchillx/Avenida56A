@@ -114,27 +114,29 @@ section {
             z-index: 0;
             text-align: left;
             background-color: white;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
         }
 
 
 li img {
     width: auto;
     height: 10vw;
-    display: block;
-    margin: auto;
+   
 }
 
 li h3 {
     width: fit-content;
     font-size: 0.9vw;
-    left: 5px;
+    
 }
 
 li p {
     width: fit-content;
-    font-size: 0.9vw;
+    font-size: 0.8vw;
     color: #333;
-    left: 5px;
+   
 }
 
     li h3:hover,
