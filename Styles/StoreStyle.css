@@ -27,6 +27,7 @@
 .product {
     width: fit-content;
     height: fit-content;
+    max-width: 300px;
     position: relative;
     margin: 30px;
     text-align: left;
