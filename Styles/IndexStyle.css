@@ -115,6 +115,7 @@ section {
             display: flex;
             justify-content: center;
             cursor: pointer;
+            background-color:antiquewhite;
         }
 
 .product {
