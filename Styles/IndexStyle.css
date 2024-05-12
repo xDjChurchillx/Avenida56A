@@ -65,8 +65,8 @@ section {
 
     .hi-slide .hi-next,
     .hi-slide .hi-prev {
-        width: 37px;
-        height: 40px;
+        width: 33px;
+        height: 35px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -75,10 +75,10 @@ section {
         color: black;
         transition: all 0.7s;
         font-family: "DM Sans", sans-serif;
-        font-size: 1.7vw;
+        font-size: 1.6vw;
         border: 1px solid black;
         z-index: 20;
-        top: -10px;
+       
     }
     .hi-slide .hi-next p,
     .hi-slide .hi-prev p{
