@@ -59,6 +59,8 @@ section {
     width: 80vw;
     height: 15vw;
     border-radius: 50px;
+    display: flex;
+
 }
 
     .hi-slide .hi-next,
@@ -90,13 +92,13 @@ section {
         }
 
     .hi-slide .hi-prev {
-        top: -50px;
-        right: -40px;
+        top: 0px;
+       
     }
 
     .hi-slide .hi-next {
-        top: -50px;
-        right: -75px;
+        top: 0px;
+       
     }
 
 
