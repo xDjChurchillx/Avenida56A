@@ -51,9 +51,10 @@ section {
 
 .two {
     display: flex;
-    flex-direction: column; /* Cambia el flujo a vertical */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px;
 }
 
 .hi-slide {
