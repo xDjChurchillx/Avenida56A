@@ -112,10 +112,9 @@ section {
             overflow: hidden;
             position: absolute;
             z-index: 0;
-            display: flex;
-            justify-content: center;
-            cursor: pointer;
-            background-color:antiquewhite;
+            text-align: left;
+           
+            background-color: antiquewhite;
         }
 
 .product {
