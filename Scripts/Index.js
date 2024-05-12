@@ -41,10 +41,10 @@ $(document).ready(function () {
                         p.textContent = producto.Price;
 
                         // Añadir la imagen, el h3, el p y el botón al div 'product'
-                        productDiv.appendChild(img);
-                        productDiv.appendChild(h3);
-                        productDiv.appendChild(p);
-                        productli.appendChild(productDiv);
+                        productli.appendChild(img);
+                        productli.appendChild(h3);
+                        productli.appendChild(p);
+                       /* productli.appendChild(productDiv);*/
 
                         var productliClone = productli.cloneNode(true);
                         // Añadir el div 'product' al contenedor principal
