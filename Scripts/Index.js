@@ -18,8 +18,8 @@ $(document).ready(function () {
                         var imgs = JSON.parse(producto.JsonImg);
                         console.log("Nombre: " + producto.Product);
                         // Crear un elemento div con la clase 'product'
-                        var productDiv = document.createElement('div');
-                        productDiv.classList.add('product');
+                        var productli = document.createElement('li');
+                        productli.classList.add('product');
 
                         // Crear un elemento img con el src correspondiente al primer elemento del arreglo 'Imagenes'
                         var img = document.createElement('img');
