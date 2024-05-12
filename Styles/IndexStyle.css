@@ -109,12 +109,11 @@ section {
     }
 
         .hi-slide > ul > li {
-            overflow: hidden;
+           
             position: absolute;
             z-index: 0;
             text-align: left;
-           
-            background-color: antiquewhite;
+            background-color: white;
         }
 
 .product {
