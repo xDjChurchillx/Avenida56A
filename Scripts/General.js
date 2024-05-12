@@ -82,6 +82,12 @@ if (Filtro !== null) {
             OpenSearchinput = true;  
 
     });
+    Filtro.addEventListener("keydown", function (event) {
+        if (event.keyCode === 13) {
+            //busqueda
+            window.location.href = window.location.origin + "/Store/Store.html?filter=" + Filtro.value;
+        }
+    });
 }
 if (SearchBox !== null) {
 
