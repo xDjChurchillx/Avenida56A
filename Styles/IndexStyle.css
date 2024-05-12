@@ -115,7 +115,7 @@ section {
             display: flex;
             justify-content: center;
             cursor: pointer;
-            transition: opacity 1s ease;
+            transition: opacity 3s ease;
         }
 
 
