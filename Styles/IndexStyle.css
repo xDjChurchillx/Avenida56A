@@ -133,9 +133,7 @@ section {
 .product h3 {
     width: fit-content;
     font-size: 20px;
-    position: absolute;
-    top: 5px;
-    left: 5px;
+    
 }
 
 .product p {
