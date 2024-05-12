@@ -130,7 +130,7 @@ li h3 {
 
 li p {
     width: fit-content;
-    font-size: 14px;
+    font-size: 0.9vw;
     color: #333;
     left: 5px;
 }
