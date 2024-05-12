@@ -133,7 +133,7 @@ section {
 
     .product h3 {
         width: fit-content;
-        font-size: 20px;
+        font-size: 1vw;
         left: 5px;
     }
 
