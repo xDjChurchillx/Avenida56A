@@ -75,7 +75,7 @@ section {
         color: black;
         transition: all 0.7s;
         font-family: "DM Sans", sans-serif;
-        font-size: 40px;
+        font-size: 1vw;
         border: 1px solid black;
         z-index: 20;
     }
