@@ -17,9 +17,10 @@ $(document).ready(function () {
                     products.forEach(function (producto) {
                         var imgs = JSON.parse(producto.JsonImg);
                         console.log("Nombre: " + producto.Product);
-                        //crear el li
-                        var productli = document.createElement('li');
-                      
+                        // Crear un elemento div con la clase 'product'
+                        var productDiv = document.createElement('div');
+                        productDiv.classList.add('product');
+
                         // Crear un elemento img con el src correspondiente al primer elemento del arreglo 'Imagenes'
                         var img = document.createElement('img');
                         var path = imgs.Imagenes[0];
@@ -30,9 +31,18 @@ $(document).ready(function () {
                         /* img.src = imgs.Imagenes[0];*/
                         css += '#' + imgName + ':hover {content: url(\'' + imgs.Imagenes[1] + '\');}\n';
 
-                   
+                        // Crear un elemento h3 con el nombre del producto
+                        var h3 = document.createElement('h3');
+                        h3.textContent = producto.Product;
+
+                        // Crear un elemento p con la descripción del producto
+                        var p = document.createElement('p');
+                        p.textContent = producto.Price;
+
                         // Añadir la imagen, el h3, el p y el botón al div 'product'
                         productli.appendChild(img);
+                        productli.appendChild(h3);
+                        productli.appendChild(p);
 
                         var productliClone = productli.cloneNode(true);
                         // Añadir el div 'product' al contenedor principal
