@@ -35,6 +35,13 @@ $(document).ready(function () {
                         // Crear un elemento h3 con el nombre del producto
                         var h3 = document.createElement('h3');
                         h3.textContent = producto.Product;
+                        h3.onclick = function () {
+                            window.location.href = window.location.origin + "/Store/Store.html?filter=" + producto.Product;
+                        };
+                       
+
+
+
 
                         // Crear un elemento p con la descripción del producto
                         var p = document.createElement('p');
@@ -43,7 +50,7 @@ $(document).ready(function () {
                         // Añadir la imagen, el h3, el p y el botón al div 'product'
                         productli.appendChild(img);
                         productli.appendChild(h3);
-                        productli.appendChild(p);
+                        productli.appendChild(p); 
                        /* productli.appendChild(productDiv);*/
 
                         var productliClone = productli.cloneNode(true);
