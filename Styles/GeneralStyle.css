@@ -34,6 +34,7 @@
         display: flex;
         flex-wrap: wrap; /* Permitir que los elementos se envuelvan a la siguiente línea si no caben */
         gap: 10px;
+        z-index: 100;
     }
     
         input:-webkit-autofill,
