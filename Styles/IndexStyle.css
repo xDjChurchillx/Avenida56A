@@ -21,6 +21,7 @@ section {
     justify-content: center;
     align-items: center;
     scroll-snap-align: start;
+    overflow-y:scroll;
 }
 
 .one {
