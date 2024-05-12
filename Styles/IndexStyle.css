@@ -120,6 +120,7 @@ section {
 li img {
     width: auto;
     height: 10vw;
+    display: block;
     margin: auto;
 }
 
