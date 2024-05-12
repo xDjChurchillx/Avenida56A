@@ -138,9 +138,7 @@ section {
 
 .product p {
     font-size: 14px;
-    color: #333;
-    position: absolute;
-    bottom: 5px;
+    color: #333;   
     left: 5px;
 }
 
