@@ -109,6 +109,9 @@ section {
     }
 
         .hi-slide > ul > li {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
             overflow: hidden;
             position: absolute;
             z-index: 0;
@@ -117,24 +120,17 @@ section {
             text-align: center;
         }
 
-
 li img {
     width: auto;
     height: 10vw;
-   
+    margin: auto; /* Centra la imagen horizontalmente */
 }
 
-li h3 {
-    width: fit-content;
-    font-size: 0.9vw;
-    
-}
-
+li h3,
 li p {
     width: fit-content;
-    font-size: 0.8vw;
-    color: #333;
-   
+    font-size: 0.9vw; /* O el tamaño deseado */
+    margin: auto; /* Centra vertical y horizontalmente */
 }
 
     li h3:hover,
