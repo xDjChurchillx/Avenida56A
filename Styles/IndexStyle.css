@@ -109,33 +109,27 @@ section {
     }
 
         .hi-slide > ul > li {
-           
+            overflow: hidden;
             position: absolute;
             z-index: 0;
             text-align: left;
             background-color: white;
         }
 
-.product {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    text-align: left;
-    background-color: transparent;
-}
 
 li img {
-    width: auto;
+    width: 100%;
     height: 80%;
 }
 
 li h3 {
     width: fit-content;
-    font-size: 1vw;
+    font-size: 0.1vw;
     left: 5px;
 }
 
 li p {
+    width: fit-content;
     font-size: 14px;
     color: #333;
     left: 5px;
