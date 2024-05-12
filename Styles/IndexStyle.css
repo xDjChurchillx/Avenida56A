@@ -125,25 +125,25 @@ section {
     background-color: transparent;
 }
 
-.product img {
+li img {
     width: auto;
     height: 80%;
 }
 
-    .product h3 {
-        width: fit-content;
-        font-size: 1vw;
-        left: 5px;
-    }
-
-.product p {
-    font-size: 14px;
-    color: #333;   
+li h3 {
+    width: fit-content;
+    font-size: 1vw;
     left: 5px;
 }
 
-    .product h3:hover,
-    .product p:hover {
+li p {
+    font-size: 14px;
+    color: #333;
+    left: 5px;
+}
+
+    li h3:hover,
+    li p:hover {
         text-decoration: underline;
         cursor: pointer;
     }
