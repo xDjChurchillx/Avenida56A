@@ -114,9 +114,7 @@ section {
             z-index: 0;
             text-align: left;
             background-color: white;
-            display: flex;
-            justify-content: center; 
-            align-items: center;
+            text-align: center;
         }
 
 
