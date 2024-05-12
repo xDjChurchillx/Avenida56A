@@ -50,8 +50,10 @@ section {
     }
 
 .two {
-    align-items: center;
-    display: grid;
+    display: flex;
+    flex-direction: column; /* Cambia el flujo a vertical */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
 }
 
 .hi-slide {
