@@ -95,6 +95,7 @@
     }
 
     .input-search-Active {
+        z-index: 100;
         width: 300px;
         border-radius: 0px;
         background-color: transparent;
