@@ -110,6 +110,7 @@ section {
 
         .hi-slide > ul > li {
             display: flex;
+            flex-direction: column; /* Cambia el flujo a vertical */
             justify-content: center; /* Centra horizontalmente */
             align-items: center; /* Centra verticalmente */
             overflow: hidden;
