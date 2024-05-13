@@ -141,6 +141,99 @@ li p {
 .three {
     background-color: #F0EFEF;
 }
+/* Estilos para el footer */
+.footer {
+    background-color: #343a40; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    padding: 40px 0;
+}
+
+/* Estilos para el contenedor del footer */
+.footer-container {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+/* Estilos para los iconos de redes sociales */
+.social-icon {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff; /* Color del icono */
+    background-color: #007bff; /* Color de fondo del botón */
+    margin: 5px;
+}
+
+/* Estilos para el formulario de suscripción */
+.newsletter-form {
+    margin-top: 20px;
+}
+
+.form-description {
+    font-size: 16px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-outline {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-input {
+    font-size: 16px;
+}
+
+/* Estilos para el texto de la sección de texto */
+.text-content {
+    margin-top: 20px;
+}
+
+.text-description {
+    font-size: 14px;
+}
+
+/* Estilos para la sección de enlaces */
+.links-section {
+    margin-top: 20px;
+}
+
+.link-heading {
+    font-size: 16px;
+}
+
+.link-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.link {
+    font-size: 14px;
+    color: #fff; /* Color del enlace */
+    text-decoration: none;
+}
+
+    .link:hover {
+        text-decoration: underline;
+    }
+
+/* Estilos para el pie de página */
+.footer p {
+    font-size: 14px;
+}
+
+/* Estilos para el enlace de MDBootstrap */
+.mdbootstrap-link {
+    color: #fff; /* Color del enlace */
+}
+
 
 .four {
 }
