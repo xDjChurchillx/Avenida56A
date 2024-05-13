@@ -174,8 +174,8 @@ form .inputBox {
 
     form .inputBox input {
         position: relative;
-        width: 100%;
-        background: #333;
+        width: 200px;
+        background: transparent;
         border: none;
         outline: none;
         padding: 25px 10px 7.5px;
@@ -190,7 +190,7 @@ form .inputBox {
         left: 0;
         padding: 15px 10px;
         font-style: normal;
-        color: white;
+        color: black;
         transition: 0.5s;
         pointer-events: none;
     }
@@ -199,7 +199,7 @@ form .inputBox {
     form .inputBox input:valid ~ label {
         transform: translateY(-7.5px);
         font-size: 0.8em;
-        color: #fff;
+        color: black;
     }
 
 
@@ -217,9 +217,6 @@ form button {
     padding: 10px;
     background-color: white;
     color: #000;
-    font-weight: 600;
-    font-size: 1.35em;
-    letter-spacing: 0.05em;
     cursor: pointer;
 }
 
