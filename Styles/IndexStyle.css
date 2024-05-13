@@ -166,7 +166,9 @@ footer {
     .foot-container form {
         margin-top: 10px;
     }
-
+form {
+  text-align:left;
+}
 form .inputBox {
     position: relative;
     width: 100%;
