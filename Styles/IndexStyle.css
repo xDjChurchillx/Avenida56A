@@ -167,13 +167,54 @@ footer {
         margin-top: 10px;
     }
 
-    .foot-container input[type="email"] {
-        padding: 10px;
-        width: 200px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-right: 5px;
+form .inputBox {
+    position: relative;
+    width: 100%;
+}
+
+    form .inputBox input {
+        position: relative;
+        width: 100%;
+        background: #333;
+        border: none;
+        outline: none;
+        padding: 25px 10px 7.5px;
+        border-radius: 4px;
+        color: #fff;
+        font-weight: 500;
+        font-size: 1em;
     }
+
+    form .inputBox label {
+        position: absolute;
+        left: 0;
+        padding: 15px 10px;
+        font-style: normal;
+        color: white;
+        transition: 0.5s;
+        pointer-events: none;
+    }
+
+    form .inputBox input:focus ~ label,
+    form .inputBox input:valid ~ label {
+        transform: translateY(-7.5px);
+        font-size: 0.8em;
+        color: #fff;
+    }
+
+form a {
+    color: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s !important;
+}
+
+input[type="submit"]:active {
+    opacity: 0.6;
+}
+
 
     .foot-container button {
         padding: 10px 20px;
