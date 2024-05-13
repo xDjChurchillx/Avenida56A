@@ -142,8 +142,8 @@ li p {
     background-color: #F0EFEF;
 }
 /* Estilos para el pie de página */
-.footer {
-    display: flex;
+footer {
+    display: inline-block;
     width: fit-content;    
 }
 
