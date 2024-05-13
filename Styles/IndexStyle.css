@@ -143,7 +143,7 @@ li p {
 }
 /* Estilos para el pie de página */
 .footer {
-    display: inline-block;
+    display: flex;
     width: fit-content;    
 }
 
