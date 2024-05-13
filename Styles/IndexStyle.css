@@ -175,13 +175,13 @@ form .inputBox {
     form .inputBox input {
         position: relative;
         width: 200px;
-        background: transparent;
+        background-color: transparent;
         border-bottom: 1px solid black;
         border: none;
         outline: none;
         padding: 25px 10px 7.5px;
         border-radius: 4px;
-        color: #fff;
+        color: black;
         font-weight: 500;
         font-size: 1em;
     }
