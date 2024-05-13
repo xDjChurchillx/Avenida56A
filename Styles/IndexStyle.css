@@ -153,7 +153,11 @@ footer {
    margin-left: 30px;
    padding-right: 20px;
 }
-
+.foot-lastcontainer {
+   
+    margin-left: 30px;
+    padding-right: 20px;
+}
     .foot-container h2 {
         margin-bottom: 10px;
     }
