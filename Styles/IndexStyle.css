@@ -202,9 +202,7 @@ form .inputBox {
         color: #fff;
     }
 
-form a {
-    color: white;
-}
+
 
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
@@ -215,19 +213,19 @@ input[type="submit"]:active {
     opacity: 0.6;
 }
 
+form button {
+    padding: 10px;
+    background-color: white;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.35em;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+}
 
-    .foot-container button {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+    form button:hover {
+        background-color: #b4b4b4;
     }
-
-        .foot-container button:hover {
-            background-color: #0056b3;
-        }
 
 .four {
 }
