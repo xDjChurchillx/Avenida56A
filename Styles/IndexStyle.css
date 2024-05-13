@@ -175,6 +175,8 @@ form .inputBox {
     form .inputBox input {
         position: relative;
         width: 200px;
+        height: 10px;
+        left: 0;
         background-color: transparent;
         border-bottom: 1px solid black;
         outline: none;
