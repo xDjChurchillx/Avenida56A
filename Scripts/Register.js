@@ -34,7 +34,10 @@
         contrasenaError.textContent = "La contrase\u00F1a no puede tener m\u00E1s de 50 caracteres.";
         isValid = false;
     }
-
+    if (contrasena.length < 8) {
+        contrasenaError.textContent = "La contrase\u00F1a no puede tener menos de 8 caracteres.";
+        isValid = false;
+    }
 
     if (contrasena !== confirmarContrasena) {
         contrasenaError.textContent = "Las contrase\u00F1as no coinciden.";

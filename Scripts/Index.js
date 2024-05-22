@@ -1,10 +1,32 @@
 ﻿let listasellers = document.querySelector('#listaBestSellers');
 let listafavoritos = document.querySelector('#listaBestLikes');
+let btn_sub = document.querySelector('#btn_Sub');
+
 let css = '';
 
 
 $(document).ready(function () {
+    btn_sub.onclick = function () {
+        $.ajax({
+            url: 'Account/Proc_Suscribirse.php',
+            type: 'GET',
+            success: function (data) {
+                try {
+                   
 
+                } catch (error) {
+                    // Bloque de código que se ejecuta si se lanza una excepción dentro del bloque try
+                    console.log('Se ha producido un error:', error.message);
+                }
+
+
+            },
+            error: function (xhr, status, error) {
+                console.error(status + ': ' + error);
+            }
+        });
+
+    }
     $.ajax({
         url: 'Store/Proc_BestSellers.php',
         type: 'GET',
