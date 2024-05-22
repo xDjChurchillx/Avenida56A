@@ -25,8 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
              $queryListar = "CALL Cte_ListCorreos('$correo')";
             $result = mysqli_query($conn, $queryListar);
             if ($result === false) {
-                echo "<script>alert('La base de datos ha fallado');
-                 window.location.href = '../index.html';</script>";
+              //  echo "<script>alert('La base de datos ha fallado');
+               //  window.location.href = '../index.html';</script>";
                 exit();
             } else {
                 $email_exists = false;
@@ -34,49 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Verificar si el correo actual es igual al recibido en el formulario
                     if ($row['Cte_Correo'] == $correo) {
                         $email_exists = true;
+                        echo "<script>alert('test');</script>";
                         break; // Salir del bucle ya que hemos encontrado una coincidencia
                     }
-                }
-                // Mostrar mensaje dependiendo de si se encontró el correo o no
-                if ($email_exists) {
-                    echo "<script>alert('Este correo ya pertenece a una cuenta');
-                 window.location.href = 'Register.html';</script>";
-                    exit();
-                } else {
-
-                    $query = "CALL Cte_Insert('$correo', '$nombre','$telefono','$contrasena','$contrasena_encriptada','$recibir_noticias')";
-                    $resBD = mysqli_query($conn2, $query);
-
-                    if ($resBD === false) {
-                        echo "<script>alert('Error al crear Perfil');
-                          window.location.href = '../index.html';</script>";
-                        exit();
-                    } else {
-                    if ($recordar === "True") {
-                       
-                        echo "<script>
-                                var Avn56User = [
-                                    { correo: '" . $correo . "',nombre: '" . $nombre . "', pswrd:'" . $contrasena_encriptada . "'}
-                                ];
-                                 localStorage.setItem('Avn56User', JSON.stringify(Avn56User));
-                                 sessionStorage.setItem('Avn56User', JSON.stringify(Avn56User));
-                                alert('Perfil Creado');
-                                window.location.href = '../index.html';
-                              </script>";
-                    } else {
-                        echo "<script>
-                                 var Avn56User = [
-                                    { correo: '" . $correo . "',nombre: '" . $nombre . "', pswrd:'" . $contrasena_encriptada . "'}
-                                ];
-                            alert('Perfil Creado');
-                            localStorage.removeItem('Avn56User');
-                             sessionStorage.setItem('Avn56User', JSON.stringify(Avn56User));
-                             window.location.href = '../index.html';
-                            </script>";
-                    }
-                     exit();
-                    }
-                }
+                }               
             }
 
     } catch (Exception $ex) {
