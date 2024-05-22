@@ -7,12 +7,15 @@ let css = '';
 
 $(document).ready(function () {
     btn_sub.onclick = function () {
+        var correosub = document.getElementById("correosub").value;
         $.ajax({
             url: 'Account/Proc_Suscribirse.php',
             type: 'GET',
+            data: { correo: correosub },
             success: function (data) {
                 try {
-                   
+                    console.log('succes sub');
+                    console.log(data);
 
                 } catch (error) {
                     // Bloque de código que se ejecuta si se lanza una excepción dentro del bloque try
