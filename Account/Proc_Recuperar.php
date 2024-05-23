@@ -11,7 +11,7 @@ require '../PHPMailer/SMTP.php';
  try {
     
         $correo = isset($_GET['correo']) ? $_GET['correo'] : '';
-        
+        $nombre = '';
         // Instancia un nuevo objeto PHPMailer
         $mail = new PHPMailer(true);
 
@@ -29,6 +29,7 @@ require '../PHPMailer/SMTP.php';
                     // Verificar si el correo actual es igual al recibido en el formulario
                     if ($row['Correo'] == $correo) {
                         $email_exists = true;
+                        $nombre = $row['Nombre'];
                         break; // Salir del bucle ya que hemos encontrado una coincidencia
                     }
                 }
@@ -52,7 +53,16 @@ require '../PHPMailer/SMTP.php';
 
                                 // Configura el asunto y el cuerpo del correo
                                 $mail->Subject = 'Account Recovery';
-                                $mail->Body    = '¡Este es un correo de prueba enviado desde PHP!';
+                                $mail->Body = "Hola $nombre,
+
+                                               Hemos detectado que has solicitado restablecer tu contraseña en nuestro sitio web. Por favor, haz clic en el siguiente enlace para definir una nueva contraseña:
+
+                                               <a href='https://avenida56a.com'>Definir Nueva Contraseña</a>
+
+                                               Si no solicitaste este cambio, por favor ignora este mensaje.
+ 
+                                               Gracias,
+                                               El equipo de Avenida56A";
 
                                 // Envía el correo
                                 $mail->send();
