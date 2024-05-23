@@ -1,10 +1,19 @@
 <?php
+// Importa la clase PHPMailer
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 require '../../Private/Credentials/DataBase/connection.php';
+require '../PHPMailer/Exception.php';
+require '../PHPMailer/PHPMailer.php';
+require '../PHPMailer/SMTP.php';
 
  try {
     
         $correo = isset($_GET['correo']) ? $_GET['correo'] : '';
+        
+        // Instancia un nuevo objeto PHPMailer
+        $mail = new PHPMailer(true);
 
         if ($conn8->connect_error || $conn8 === null) {
                  echo '-1';
@@ -26,7 +35,35 @@ require '../../Private/Credentials/DataBase/connection.php';
        
                  // Mostrar mensaje dependiendo de si se encontró el correo o no
                 if ($email_exists) {
-                  echo '1';
+
+                            try {
+                                // Configura el servidor SMTP
+                                $mail->isSMTP();
+                                $mail->Host       = 'smtp.hostinger.com';  // Cambia esto por tu servidor SMTP
+                                $mail->SMTPAuth   = true;
+                                $mail->Username   = 'account@avenida56a.com'; // Cambia esto por tu nombre de usuario SMTP
+                                $mail->Password   = '9Tp&X3l@7zQw'; // Cambia esto por tu contraseña SMTP
+                                $mail->SMTPSecure = 'tls';
+                                $mail->Port       = 587;
+
+                                // Configura el remitente y el destinatario
+                                $mail->setFrom('account@avenida56a.com', 'Account Recovery');
+                                $mail->addAddress($correo, '');
+
+                                // Configura el asunto y el cuerpo del correo
+                                $mail->Subject = '¡Hola desde PHP!';
+                                $mail->Body    = '¡Este es un correo de prueba enviado desde PHP!';
+
+                                // Envía el correo
+                                $mail->send();
+                                echo '1';
+                            } catch (Exception $e) {
+                                echo '-1';
+                            }
+
+
+
+                  
                 } else {
                   echo '-1';                          
                 }
@@ -36,3 +73,10 @@ require '../../Private/Credentials/DataBase/connection.php';
          echo '-1';
     }
     ?>
+
+
+
+
+
+
+
