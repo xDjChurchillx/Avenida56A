@@ -15,9 +15,13 @@ let contraU = null;
 let Avn56UserU = null;
 
 function obtenerParametroURL(nombre) {
+    console.log(nombre);
     nombre = nombre.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    console.log(nombre);
     var regex = new RegExp('[\\?&]' + nombre + '=([^&#]*)');
     var resultados = regex.exec(location.search);
+    console.log(resultados);
+    console.log(decodeURIComponent(resultados[1].replace(/\+/g, ' ')));
     return resultados === null ? '' : decodeURIComponent(resultados[1].replace(/\+/g, ' '));
 }
 
