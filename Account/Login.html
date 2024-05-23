@@ -105,7 +105,25 @@
             <div class="popup-content">
                 <span id="closePopup" class="close">&times;</span>
                 <!--/Ref/-->
-                <iframe id="loginframe" src="../Account/Login.html" scrolling="no"></iframe>
+                <form id="Loginform" action="Proc_Login.php" method="post" onsubmit="return validarFormulario()">
+                    <h2>Recuperar Cuenta</h2>
+
+                    <div class="inputBox">
+                        <input type="email" id="correo" name="correo" required value="" />
+                        <label>Correo</label>
+                    </div>
+                    <span id="correoError" class="error-message"></span>
+
+
+                    <br />
+
+                    <button type="submit" name="submit">Iniciar sesión</button>
+                    <a id="contrasenaLink" href="?filter=recovery">¿Perdiste tu contraseña? Recupera tu cuenta</a>
+                    <a id="registroLink" href="#">¿Aun no tienes cuenta? Registrate</a>
+
+
+
+                </form>
             </div>
         </div>
     </main>
