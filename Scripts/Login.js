@@ -37,7 +37,7 @@ $(document).ready(function () {
         console.log('filtro='+filtro);
         if (filtro === 'recovery') {
             popup.style.display = 'block';
-            console.log('test1');
+            console.log(filtro);
         }
         
         if (filtro.length > 3) {
@@ -80,7 +80,7 @@ function recuperar() {
                         data = data.trim();
                         console.log(data);
                         alert(data);
-                        if (data == "") {
+                        if (data === 'Correo de recuperacion enviado, porfavor revisa tu correo') {
                             var newAvn56User = [
                                 {
                                     correo: correorec,
