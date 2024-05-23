@@ -57,6 +57,7 @@ $(document).ready(function () {
                             var correorec2 = document.getElementById("correorec2");
                             correorec2.value = correorecL;
                             correorec2.readOnly = true;
+                            correorec2.focus();
                         }
                        
                     }
