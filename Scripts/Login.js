@@ -119,19 +119,16 @@ function cambiar() {
                 data: { correo: correoFinal, contra: contraFinal , codigo: filtro},
                 success: function (data) {
                     try {
-                        var data2 = data.trim();
-                        var lineas = data2.split('/\n/');
-                        if (lineas[0] == "0") {
+                        console.log(data);
+                        if (data.estado == "0") {
 
 
 
 
                             alert('Perfil Actualizado');
                         } else {
-                            console.log(data);
-                            console.log('lineas');
-                            console.log(lineas[0]);
-                        alert(data);
+                            console.log(data.estado);
+                            alert(data.estado);
                         }
                        
                     } catch (error) {

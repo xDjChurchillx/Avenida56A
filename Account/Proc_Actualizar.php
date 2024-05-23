@@ -102,24 +102,54 @@ require '../PHPMailer/SMTP.php';
 
                                                 // Envía el correo
                                                 $mail->send();
-                                               echo '0\n' . $correo . '\n' . $nombre . '\n' . $telefono . '\n' . $contra;
+                                               $data = array(
+                                                            "estado" => 0,
+                                                            "correo" => $correo,
+                                                            "nombre" => $nombre,
+                                                            "telefono" => $telefono,
+                                                            "contra" => $contra
+                                                        );
+                                                                                                                
+                                                        $json_data = json_encode($data);                                                      
+                                                        echo $json_data;
                                       }
                               
                             } catch (Exception $e) {
-                                echo 'Error al Actualizar Perfil';
+                             $data = array(
+                                              "estado" => 'Error al Actualizar Perfil'
+                                           );
+                                                                                                                
+                                $json_data = json_encode($data);                                                      
+                                echo $json_data;
                                 exit();
                             }   
                         }else {
-	                        echo 'Error al Actualizar Perfil '.'\n'.'(codigo de recuperacion invalido o expirado)';
+                         $data = array(
+                                              "estado" => 'Error al Actualizar Perfil(codigo de recuperacion invalido o expirado)'
+                                           );
+                                                                                                                
+                                $json_data = json_encode($data);                                                      
+                                echo $json_data;
                          }
    
                   
                 } else {
-                  echo 'Este Correo no pertenece a una cuenta' ;                        
+                $data = array(
+                            "estado" => 'Este Correo no pertenece a una cuenta'
+                            );
+                                                                                                                
+                $json_data = json_encode($data);                                                      
+                echo $json_data;                      
                 }
             }
 
     } catch (Exception $ex) {
-         echo 'Error al Actualizar Perfil';
+             $data = array(
+                        "estado" => 'Error al Actualizar Perfil'
+                        );
+                                                                                                                
+            $json_data = json_encode($data);                                                      
+            echo $json_data;   
+         
     }
     ?>
