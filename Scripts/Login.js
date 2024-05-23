@@ -44,9 +44,9 @@ $(document).ready(function () {
             if (filtro.charAt(0) === '%') {
                 filtro = filtro.substring(1);
                 popup2.style.display = 'block';
-                console.log('test2');
+                console.log(filtro);
             }
-            console.log('test3');
+            
         }
         
     }
