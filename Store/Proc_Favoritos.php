@@ -4,6 +4,7 @@ require '../../Private/Credentials/DataBase/connection.php';
 try {
 
     $correo = isset($_GET['correo']) ? $_GET['correo'] : '';
+     $contra = isset($_GET['contra']) ? $_GET['contra'] : '';
     $producto = isset($_GET['producto']) ? $_GET['producto'] : '';
 
     // Llama al procedimiento almacenado para la autenticación

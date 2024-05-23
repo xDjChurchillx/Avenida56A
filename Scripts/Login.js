@@ -42,7 +42,7 @@ $(document).ready(function () {
         
         if (filtro.length > 3) {
             if (filtro.charAt(0) === '%') {
-                filtro = filtro.substring(1);
+                filtro = filtro.substring(2);
                 popup2.style.display = 'block';
                 console.log(filtro);
             }

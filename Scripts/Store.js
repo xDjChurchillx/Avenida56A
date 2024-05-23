@@ -74,26 +74,7 @@ $(document).ready(function () {
 
     }
 
-    var usuarioGuardado = sessionStorage.getItem('Avn56User');
-    if (usuarioGuardado) {
-        // Convertir los datos de JSON a objeto
-        Avn56UserU = JSON.parse(usuarioGuardado);
-
-        correoU = Avn56User[0].correo;
-        nombreU = Avn56User[0].nombre;
-        contraU = Avn56User[0].pswrd;
-
-    } else {
-        var Avn56UserString = localStorage.getItem('Avn56User');
-        if (Avn56UserString !== null) {
-            sessionStorage.setItem('Avn56User', Avn56UserString);
-            Avn56UserU = JSON.parse(Avn56UserString);
-            correoU = Avn56User[0].correo;
-            nombreU = Avn56User[0].nombre;
-            contraU = Avn56User[0].pswrd;
-
-        }
-    }
+  
     $.ajax({
         url: 'Proc_Productos.php',
         type: 'GET',
@@ -204,6 +185,10 @@ function agregarAlCarrito(producto) {
         console.log("La lista de objetos existe en sessionStorage:" + listaCompras);
     }
 }
+function isNullOrEmpty(value) {
+    return value === null || value === undefined || value === '';
+}
+
 function agregarAFavoritos(producto) {
     //Agregar prducto a favoritos
     var usuarioGuardado = sessionStorage.getItem('Avn56User');
@@ -217,31 +202,36 @@ function agregarAFavoritos(producto) {
         var imgs = JSON.parse(producto.JsonImg);
         var path = imgs.Imagenes[0];
         var imgName = path.split('/')[3];
+        if (isNullOrEmpty(correoU) || isNullOrEmpty(contraU)) {
+         loginFrame.src = '../Account/Login.html';
+            popup.style.display = 'block';
+        } else {
+            $.ajax({
+                url: 'Proc_Favoritos.php',
+                type: 'GET',
+                data: { correo: correoU, contra: contraU, producto: producto.ID },
+                success: function (data) {
+                    try {
+                        var currentbutton = document.querySelector('#btn-' + imgName);
+                        console.log(data);
+                        if (data.trim() === "1") {
+                            currentbutton.classList.add("button-active");
+                        } else {
+                            currentbutton.classList.remove("button-active");
+                        }
 
-        $.ajax({
-            url: 'Proc_Favoritos.php',
-            type: 'GET',
-            data: { correo: correoU, producto: producto.ID },
-            success: function (data) {
-                try {
-                    var currentbutton = document.querySelector('#btn-' + imgName);
-                    console.log(data);
-                    if (data.trim() === "1") {
-                        currentbutton.classList.add("button-active");
-                    } else {
-                        currentbutton.classList.remove("button-active");
+                    } catch (error) {
+                        // Bloque de código que se ejecuta si se lanza una excepción dentro del bloque try
+                        console.log('Se ha producido un error:', error.message);
                     }
 
-                } catch (error) {
-                    // Bloque de código que se ejecuta si se lanza una excepción dentro del bloque try
-                    console.log('Se ha producido un error:', error.message);
+                },
+                error: function (xhr, status, error) {
+                    console.error(status + ': ' + error);
                 }
-
-            },
-            error: function (xhr, status, error) {
-                console.error(status + ': ' + error);
-            }
-        });
+            });
+        }
+       
 
     } else {
         loginFrame.src = '../Account/Login.html';        
