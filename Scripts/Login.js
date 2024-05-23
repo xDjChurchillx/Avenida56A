@@ -50,10 +50,15 @@ $(document).ready(function () {
                 var UserString = localStorage.getItem('Avn56User');
                 if (UserString !== null) {                   
                     Avn56User = JSON.parse(UserString);
-                   var correorecL = Avn56User[0].correo;
+                    var correorecL = Avn56User[0].correo;
+                    var nombrelog = Avn56User[0].nombre;
                     if (!isNullOrEmpty(correorecL)) {
-                        var correorec2 = document.getElementById("correorec2");
-                        correorec2.value = correorecL;
+                        if (nombrelog === '-1') {
+                            var correorec2 = document.getElementById("correorec2");
+                            correorec2.value = correorecL;
+                            correorec2.readOnly = true;
+                        }
+                       
                     }
                 }
 
@@ -100,7 +105,7 @@ function recuperar() {
                             var newAvn56User = [
                                 {
                                     correo: correorec,
-                                    nombre: '',
+                                    nombre: '-1',
                                     pswrd: ''
                                 }
                             ];
