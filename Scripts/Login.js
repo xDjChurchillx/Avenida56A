@@ -16,19 +16,9 @@ let filtro = extraerFiltroDeUrl(location.search);
 
 function extraerFiltroDeUrl(url) {
     console.log(url);
-    const index = url.indexOf('?');
-    if (index === -1) {
-        return null;
-    }
-    const queryString = url.slice(index + 1);
-    const parametros = queryString.split('&');
-    for (const parametro of parametros) {
-        const [clave, valor] = parametro.split('=');
-        if (clave === 'filtro') {
-            return decodeURIComponent(valor);
-        }
-    }
-    return null;
+    var filt = url.indexOf('?filter=');
+    console.log(filt);
+    return filt;
 }
 
 popupclose.onclick = function () {
