@@ -47,7 +47,7 @@ require '../PHPMailer/SMTP.php';
                          $codigo2 = $encriptador->encriptar($nombre, $clave, $iv);
                           $codigo2 = substr($codigo2, 0, 15);
 
-                  
+                        echo $codigo2;
 
                        
                         if($codigo == $codigo2) {
