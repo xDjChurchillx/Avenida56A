@@ -40,7 +40,6 @@ $(document).ready(function () {
                             var correorec2 = document.getElementById("correoFinal");
                             correorec2.value = correorecL;                           
                             correorec2.focus();
-                            correorec2.readOnly = true;
                         }
 
                     }
