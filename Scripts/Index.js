@@ -9,26 +9,41 @@ $(document).ready(function () {
     btn_sub.onclick = function () {
         event.preventDefault();
         var correosub = document.getElementById("correosub").value;
-        $.ajax({
-            url: 'Account/Proc_Suscribirse.php',
-            type: 'GET',
-            data: { correo: correosub },
-            success: function (data) {
-                try {
-                    console.log('succes sub');
-                    console.log(data);
+        let correoError = document.getElementById("correoError");
+        var isValid = true;
+        if (correosub.length > 100) {
+            correoError.textContent = "El correo electr\u00D3nico no puede tener m\u00E1s de 100 caracteres.";
+            isValid = false;
+        }
+        let correoPattern = /^\w+@\w+.com$/; // Formato: (+XX)XXX-XXX-XXXX
+        if (!correoPattern.test(correosub)) {
+            correoError.textContent = "El correo es invalido.";
 
-                } catch (error) {
-                    // Bloque de código que se ejecuta si se lanza una excepción dentro del bloque try
-                    console.log('Se ha producido un error:', error.message);
+            isValid = false;
+        }
+        if (isValid) {
+            $.ajax({
+                url: 'Account/Proc_Suscribirse.php',
+                type: 'GET',
+                data: { correo: correosub },
+                success: function (data) {
+                    try {
+                        console.log('succes sub');
+                        console.log(data);
+
+                    } catch (error) {
+                        // Bloque de código que se ejecuta si se lanza una excepción dentro del bloque try
+                        console.log('Se ha producido un error:', error.message);
+                    }
+
+
+                },
+                error: function (xhr, status, error) {
+                    console.error(status + ': ' + error);
                 }
-
-
-            },
-            error: function (xhr, status, error) {
-                console.error(status + ': ' + error);
-            }
-        });
+            });
+        }
+       
 
     }
     $.ajax({

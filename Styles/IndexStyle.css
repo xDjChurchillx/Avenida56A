@@ -173,7 +173,12 @@ form .inputBox {
     position: relative;
     width: 100%;
 }
-
+    form span {
+        color: red;
+        font-size: 14px;
+        display: block;
+        margin-top: 4px;
+    }
     form .inputBox input {
         position: relative;
         width: 300px;

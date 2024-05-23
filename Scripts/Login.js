@@ -33,6 +33,12 @@ function validarFormulario() {
         contrasenaErrorL.textContent = "La contrase\u00F1a no puede tener m\u00E1s de 50 caracteres.";
         isValid = false;
     }
+    let correoPattern = /^\w+@\w+.com$/; // Formato: (+XX)XXX-XXX-XXXX
+    if (!correoPattern.test(correoL)) {
+        correoError.textContent = "El correo es invalido.";
+
+        isValid = false;
+    }
    
     return isValid;
 }
