@@ -6,6 +6,21 @@ let contrasenaLink = document.getElementById("contrasenaLink");
 let registroLink = document.getElementById("registroLink");
 let popup = document.getElementById('popupContainer');
 let popupclose = document.getElementById('closePopup');
+let filtro = obtenerParametroURL('filter');
+
+function obtenerParametroURL(nombre) {
+    nombre = nombre.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + nombre + '=([^&#]*)');
+    var resultados = regex.exec(location.search);
+    return resultados === null ? '' : decodeURIComponent(resultados[1].replace(/\+/g, ' '));
+}
+
+if (filtro === 'recovery') {
+    popup.style.display = 'block';
+}
+popupclose.onclick = function () {
+    popup.style.display = 'none';
+};
 
 registroLink.addEventListener("click", registroclik);
 
