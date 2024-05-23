@@ -5,6 +5,7 @@ use PHPMailer\PHPMailer\Exception;
 
 require '../../Private/Credentials/DataBase/connection.php';
 require '../../Private/Credentials/encriptCred.php';
+require '../../Private/Credentials/mailCred.php';
 require '../../Private/Encripter/encripter.php';
 require '../PHPMailer/Exception.php';
 require '../PHPMailer/PHPMailer.php';
@@ -49,8 +50,8 @@ require '../PHPMailer/SMTP.php';
                                 $mail->isSMTP();
                                 $mail->Host       = 'smtp.hostinger.com';  // Cambia esto por tu servidor SMTP
                                 $mail->SMTPAuth   = true;
-                                $mail->Username   = 'account@avenida56a.com'; // Cambia esto por tu nombre de usuario SMTP
-                                $mail->Password   = '9Tp&X3l@7zQw'; // Cambia esto por tu contraseña SMTP
+                                $mail->Username   = $mail1; // Cambia esto por tu nombre de usuario SMTP
+                                $mail->Password   = $Pmail1; // Cambia esto por tu contraseña SMTP
                                 $mail->SMTPSecure = 'tls';
                                 $mail->Port       = 587;
 

@@ -4,6 +4,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require '../../Private/Credentials/DataBase/connection.php';
+require '../../Private/Credentials/mailCred.php';
 require '../../Private/Credentials/encriptCred.php';
 require '../../Private/Encripter/encripter.php';
 require '../PHPMailer/Exception.php';
@@ -44,22 +45,19 @@ require '../PHPMailer/SMTP.php';
                  // Mostrar mensaje dependiendo de si se encontró el correo o no
                 if ($email_exists) {
                       //$encriptador->desencriptar('', $clave, $iv);;
-                         $codigo2 = $encriptador->encriptar($nombre, $clave, $iv);
-                          echo $codigo2;
-                           echo '-';
+                         $codigo2 = $encriptador->encriptar($nombre, $clave, $iv);                         
                           $codigo2 = substr($codigo2, 0, 15);
-                          echo $codigo2;
-                           echo '-';
-                          echo $codigo;
+                        
+                          
                         if($codigo == $codigo2) {
                             try {
                                
-                                // Configura el servidor SMTP
+                              // Configura el servidor SMTP
                                 $mail->isSMTP();
                                 $mail->Host       = 'smtp.hostinger.com';  // Cambia esto por tu servidor SMTP
                                 $mail->SMTPAuth   = true;
-                                $mail->Username   = 'account@avenida56a.com'; // Cambia esto por tu nombre de usuario SMTP
-                                $mail->Password   = '9Tp&X3l@7zQw'; // Cambia esto por tu contraseña SMTP
+                                $mail->Username   = $mail1; // Cambia esto por tu nombre de usuario SMTP
+                                $mail->Password   = $Pmail1; // Cambia esto por tu contraseña SMTP
                                 $mail->SMTPSecure = 'tls';
                                 $mail->Port       = 587;
 
