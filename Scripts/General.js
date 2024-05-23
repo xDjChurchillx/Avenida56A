@@ -39,7 +39,7 @@ function ReadandSetUser() {
 
         }
     }
-    if (!isNullOrEmpty(correoU) && !isNullOrEmpty(contraU)) {
+    if (!isNullOrEmpty(correo) && !isNullOrEmpty(contra)) {
 
         Login.textContent = "Cuenta";
         let href = Login.getAttribute("href");
