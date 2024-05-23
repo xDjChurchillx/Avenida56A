@@ -62,49 +62,55 @@ require '../PHPMailer/SMTP.php';
                          
                         if($codigo == $codigo2) {
                             try {
+                                      $email_exists = false;
+                                      $queryUpdate = "CALL Cte_Update('$correo','$nombre','$telefono','$contra','$contraEn','$noticias')";
+                                       $updateresult = mysqli_query($conn9, $queryUpdate);
+                                        while ($row = mysqli_fetch_assoc($result)) {
+                                                // Verificar si el correo actual es igual al recibido en el formulario
+                                                if ($row['Correo'] == $correo) {
+                                                    $email_exists = true;
+                                                    $nombre = $row['Nombre'];
+                                                    break; // Salir del bucle ya que hemos encontrado una coincidencia
+                                                }
+                                         }
+                                       if ($email_exists) {
+                                                         // Configura el servidor SMTP
+                                                $mail->isSMTP();
+                                                $mail->Host       = 'smtp.hostinger.com';  // Cambia esto por tu servidor SMTP
+                                                $mail->SMTPAuth   = true;
+                                                $mail->Username   = $mail1; // Cambia esto por tu nombre de usuario SMTP
+                                                $mail->Password   = $Pmail1; // Cambia esto por tu contraseña SMTP
+                                                $mail->SMTPSecure = 'tls';
+                                                $mail->Port       = 587;
 
-                              $queryUpdate = "CALL Cte_Update('$correo','$nombre','$telefono','$contra','$contraEn','$noticias')";
-                               $updateresult = mysqli_query($conn9, $queryUpdate);
+                                                // Configura el remitente y el destinatario
+                                                $mail->setFrom($mail1, 'Account Update');
+                                                $mail->addAddress($correo, '');
 
-                               echo $updateresult;
+                                                // Configura el asunto y el cuerpo del correo
+                                                $mail->Subject = "Account Update";
+                                                $mail->Body = "Hola $nombre,
 
+                                                                Hemos detectado que tu cuenta en nuestro sitio web ha sido actualizada recientemente. Si realizaste cambios en tu cuenta, puedes ignorar este mensaje.
 
-                               
-                              // Configura el servidor SMTP
-                                $mail->isSMTP();
-                                $mail->Host       = 'smtp.hostinger.com';  // Cambia esto por tu servidor SMTP
-                                $mail->SMTPAuth   = true;
-                                $mail->Username   = $mail1; // Cambia esto por tu nombre de usuario SMTP
-                                $mail->Password   = $Pmail1; // Cambia esto por tu contraseña SMTP
-                                $mail->SMTPSecure = 'tls';
-                                $mail->Port       = 587;
+                                                                Si no realizaste estos cambios o tienes alguna pregunta, por favor contáctanos de inmediato.
 
-                                // Configura el remitente y el destinatario
-                                $mail->setFrom($mail1, 'Account Update');
-                                $mail->addAddress($correo, '');
+                                                                Gracias por confiar en nosotros.
 
-                                // Configura el asunto y el cuerpo del correo
-                                $mail->Subject = "Account Update";
-                                $mail->Body = "Hola $nombrer,
+                                                                Atentamente,
+                                                                El equipo de Avenida56A";
 
-                                                Hemos detectado que tu cuenta en nuestro sitio web ha sido actualizada recientemente. Si realizaste cambios en tu cuenta, puedes ignorar este mensaje.
-
-                                                Si no realizaste estos cambios o tienes alguna pregunta, por favor contáctanos de inmediato.
-
-                                                Gracias por confiar en nosotros.
-
-                                                Atentamente,
-                                                El equipo de Avenida56A";
-
-                                // Envía el correo
-                                $mail->send();
-                                 echo 'Perfil Actualizado';
+                                                // Envía el correo
+                                                $mail->send();
+                                                 echo 'Perfil Actualizado';
+                                      }
+                              
                             } catch (Exception $e) {
                                 echo 'Error al Actualizar Perfil';
                                 exit();
                             }   
                         }else {
-	                        echo 'Error al Actualizar Perfil(codigo de recuperacion invalido)';
+	                        echo 'Error al Actualizar Perfil(codigo de recuperacion invalido o expirado)';
                          }
    
                   
