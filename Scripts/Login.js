@@ -44,6 +44,7 @@ btn_recuperar.onclick = function () {
             data: { correo: correorec },
             success: function (data) {
                 try {
+                    data = data.trim();
                     console.log(data);
                     alert(data);
                 } catch (error) {
