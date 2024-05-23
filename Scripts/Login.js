@@ -77,6 +77,7 @@ popupclose2.onclick = function () {
     popup2.style.display = 'none';
 };
 function cambiar() {
+    event.preventDefault();
     if (!bloquearEnvio) { // Verificar si no se está bloqueando el envío
         bloquearEnvio = true; // Bloquear el envío de la solicitud
         btn_cambiar.disabled = true; // Desactivar el botón
@@ -135,6 +136,7 @@ function cambiar() {
 
 }
 function recuperar() {
+    event.preventDefault();
     if (!bloquearEnvio) { // Verificar si no se está bloqueando el envío
         bloquearEnvio = true; // Bloquear el envío de la solicitud
         btn_recuperar.disabled = true; // Desactivar el botón
