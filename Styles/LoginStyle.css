@@ -29,7 +29,7 @@ main {
     gap: 20px;
 }
 
-    .content h2 {
+    h2 {
         font-size: 2em;
         color: white;
         text-transform: uppercase;
