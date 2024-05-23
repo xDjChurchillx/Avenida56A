@@ -5,10 +5,7 @@ require '../../Private/Credentials/DataBase/connection.php';
  try {
     
         $correo = isset($_GET['correo']) ? $_GET['correo'] : '';
-        $recibir_noticias = isset($_POST["recibir_noticias"]) ? "True" : "False"; // Verificar si se ha marcado la casilla de recibir noticias
        
-      
-
             if ($conn->connect_error || $conn === null) {
                 echo "<script>alert('La base de datos ha fallado');
                  window.location.href = '../index.html';</script>";            
