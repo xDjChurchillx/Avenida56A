@@ -22,6 +22,7 @@ $(document).ready(function () {
             isValid = false;
         }
         if (isValid) {
+            correoError.textContent = "";
             $.ajax({
                 url: 'Account/Proc_Suscribirse.php',
                 type: 'GET',
