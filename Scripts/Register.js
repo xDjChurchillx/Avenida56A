@@ -53,9 +53,9 @@
 
         isValid = false;
     }
-    let correoPattern = /^\w+@\w+.com$/; // Formato: (+XX)XXX-XXX-XXXX
+    let correoPattern = /^\w+@\w+.com$/; // Formato:  email
     if (!correoPattern.test(correo)) {
-        correoError.textContent = "El correo es invalido.";
+        correoError.textContent = "Por favor, ingresa un correo electr\u00F3nico v\u00E1lido.";
 
         isValid = false;
     }

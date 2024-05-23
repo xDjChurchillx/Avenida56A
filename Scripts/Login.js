@@ -47,6 +47,17 @@ $(document).ready(function () {
                 filtro = filtro.substring(2);
                 popup2.style.display = 'block';
                 console.log(filtro);
+                var UserString = localStorage.getItem('Avn56User');
+                if (UserString !== null) {                   
+                    Avn56User = JSON.parse(UserString);
+                   var correorecL = Avn56User[0].correo;
+                    if (!isNullOrEmpty(correorecL)) {
+                        var correorec2 = document.getElementById("correorec2");
+                        correorec2.value = correorecL;
+                    }
+                }
+
+
             }
             
         }
@@ -54,6 +65,9 @@ $(document).ready(function () {
     }
    
 });
+function isNullOrEmpty(value) {
+    return value === null || value === undefined || value === '';
+}
 function recuperar() {
     if (!bloquearEnvio) { // Verificar si no se está bloqueando el envío
         bloquearEnvio = true; // Bloquear el envío de la solicitud
@@ -63,11 +77,11 @@ function recuperar() {
         var correoError2 = document.getElementById("correoError2");
 
         if (correorec === "") {
-            correoError2.textContent = "Por favor, ingresa tu correo electrónico.";
+            correoError2.textContent = "Por favor, ingresa un correo electr\u00F3nico v\u00E1lido.";
             habilitarEnvio(); // Habilitar el envío de la solicitud
             return false;
         } else if (!/^\w+@\w+.com$/.test(correorec)) {
-            correoError2.textContent = "Por favor, ingresa un correo electrónico válido.";
+            correoError2.textContent = "Por favor, ingresa un correo electr\u00F3nico v\u00E1lido.";
             habilitarEnvio(); // Habilitar el envío de la solicitud
             return false;
         } else {
@@ -149,7 +163,7 @@ function validarFormulario() {
     }
     let correoPattern = /^\w+@\w+.com$/; // Formato: email
     if (!correoPattern.test(correoL)) {
-        correoError.textContent = "El correo es invalido.";
+        correoError.textContent = "Por favor, ingresa un correo electr\u00F3nico v\u00E1lido.";
 
         isValid = false;
     }
