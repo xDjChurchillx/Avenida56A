@@ -40,7 +40,7 @@ require '../PHPMailer/SMTP.php';
 
                             try {
                                 $codigo =  password_hash($nombre, PASSWORD_DEFAULT);
-                                $codigo = substr($codigo, 0, 7);
+                                $codigo = substr($codigo, 0, 15);
                                 // Configura el servidor SMTP
                                 $mail->isSMTP();
                                 $mail->Host       = 'smtp.hostinger.com';  // Cambia esto por tu servidor SMTP
@@ -60,7 +60,7 @@ require '../PHPMailer/SMTP.php';
 
                                                Hemos detectado que has solicitado restablecer tu contraseña en nuestro sitio web. Por favor, haz clic en el siguiente enlace para definir una nueva contraseña:
 
-                                               'https://avenida56a.com/Account/Login.html?filter=$codigo'
+                                               'https://avenida56a.com/Account/Login.html?filter=%codigo'
 
                                                Si no solicitaste este cambio, por favor ignora este mensaje.
  
