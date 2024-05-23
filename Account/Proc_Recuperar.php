@@ -65,7 +65,7 @@ require '../PHPMailer/SMTP.php';
 
                   
                 } else {
-                  echo 'Este Correo no pertenece a una cuenta';                        
+                  echo 'Este Correo no pertenece a una cuenta' ;                        
                 }
             }
 

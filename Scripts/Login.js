@@ -25,6 +25,7 @@ popupclose.onclick = function () {
 };
 btn_recuperar.onclick = function () {
     event.preventDefault();
+    btn_recuperar.disabled = true;
 
     var correorec = document.getElementById("correorec").value;
     var correoError = document.getElementById("correoError");
@@ -65,7 +66,7 @@ btn_recuperar.onclick = function () {
 
 
     }
-
+    btn_recuperar.disabled = false;
 
 
 }
