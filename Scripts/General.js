@@ -18,8 +18,42 @@ let nombre = null;
 let contra = null;
 let Avn56User = null;
 
+function ReadandSetUser() {
+    Logout.classList.toggle("desactivar");
+    var usuarioGuardado = sessionStorage.getItem('Avn56User');
+    if (usuarioGuardado) {
+        // Convertir los datos de JSON a objeto
+        Avn56User = JSON.parse(usuarioGuardado);
+
+        correo = Avn56User[0].correo;
+        contra = Avn56User[0].pswrd;
+
+    } else {
+        var Avn56UserString = localStorage.getItem('Avn56User');
+        if (Avn56UserString !== null) {
+            sessionStorage.setItem('Avn56User', Avn56UserString);
+            Avn56User = JSON.parse(Avn56UserString);
+            correo = Avn56User[0].correo;
+            nombre = Avn56User[0].nombre;
+            contra = Avn56User[0].pswrd;
+
+        }
+    }
+    if (!isNullOrEmpty(correoU) && !isNullOrEmpty(contraU)) {
+
+        Login.textContent = "Cuenta";
+        let href = Login.getAttribute("href");
+        var newHref = href.replace("Login.html", "MyAccount.html")
+        // Cambiar el href del elemento a "cuenta.html"
+        Login.setAttribute("href", newHref);
+        Logout.classList.toggle("desactivar");
+    }
 
 
+}
+function isNullOrEmpty(value) {
+    return value === null || value === undefined || value === '';
+}
 if (menu_icon_box !== null) {
     menu_icon_box.onclick = function () {
         menu_icon_box.classList.toggle("active");
@@ -137,34 +171,5 @@ function volverMenu() {
     menu_box.classList.remove("active");
 }
 document.addEventListener("DOMContentLoaded", function () {
-    Logout.classList.toggle("desactivar");
-    var usuarioGuardado = sessionStorage.getItem('Avn56User');
-    if (usuarioGuardado) {
-        // Convertir los datos de JSON a objeto
-        Avn56User = JSON.parse(usuarioGuardado);
-
-        correo = Avn56User[0].correo;
-        contra = Avn56User[0].pswrd;
-      
-    } else {
-        var Avn56UserString = localStorage.getItem('Avn56User');
-        if (Avn56UserString !== null) {
-            sessionStorage.setItem('Avn56User', Avn56UserString);
-            Avn56User = JSON.parse(Avn56UserString);
-            correo = Avn56User[0].correo;
-            nombre = Avn56User[0].nombre;
-            contra = Avn56User[0].pswrd;
-
-        } 
-    }
-    if (correo !== null) {
-       
-        Login.textContent = "Cuenta";
-        let href = Login.getAttribute("href");
-        var newHref = href.replace("Login.html", "MyAccount.html")
-        // Cambiar el href del elemento a "cuenta.html"
-        Login.setAttribute("href", newHref);
-        Logout.classList.toggle("desactivar");
-    }
-   
+    ReadandSetUser();   
 });
