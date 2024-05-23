@@ -135,6 +135,8 @@ function cambiar() {
                             sessionStorage.setItem('Avn56User', JSON.stringify(newAvn56User));
                             console.log(localStorage.getItem('Avn56User'));
                             alert('Perfil Actualizado');
+                           // Redireccionar a la página principal
+                              window.location.href = window.location.origin + "/";
                         } else {
                             console.log(res.estado);
                             alert(res.estado);
@@ -192,10 +194,11 @@ function recuperar() {
                                     pswrd: ''
                                 }
                             ];
-                             localStorage.setItem('Avn56User', JSON.stringify(newAvn56User));
-                           
+                             localStorage.setItem('Avn56User', JSON.stringify(newAvn56User));                           
                         }
+
                         alert(data);
+                        popup.style.display = 'none';
                     } catch (error) {
                         console.log('Se ha producido un error:', error.message);
                     }
