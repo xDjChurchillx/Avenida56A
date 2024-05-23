@@ -211,6 +211,7 @@ function isNullOrEmpty(value) {
 function habilitarEnvio() {
     bloquearEnvio = false; // Permitir el envío de la solicitud
     btn_recuperar.disabled = false; // Habilitar el botón
+    btn_cambiar.disabled = false;
 }
 function validarFormulario() {
     correoL = document.getElementById("correo").value;

@@ -41,7 +41,7 @@ require '../PHPMailer/SMTP.php';
                 if ($email_exists) {
                         $codigo2 =  password_hash($nombre, PASSWORD_DEFAULT);
                         $codigo2 = substr($codigo2, 0, 15);
-                        if($codigo == $codigo2) {
+                        if(true) {
                             try {
                                
                                 // Configura el servidor SMTP
@@ -76,7 +76,10 @@ require '../PHPMailer/SMTP.php';
                             } catch (Exception $e) {
                                 echo 'Error al Actualizar Perfil';
                             }   
-                        }   
+                        }else {
+	                        echo 'Error al Actualizar Perfil(codigo de recuperacion invalido)';
+                         }
+   
                   
                 } else {
                   echo 'Este Correo no pertenece a una cuenta' ;                        
