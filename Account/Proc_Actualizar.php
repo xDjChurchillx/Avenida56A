@@ -45,7 +45,7 @@ require '../PHPMailer/SMTP.php';
                 if ($email_exists) {
                       //$encriptador->desencriptar('', $clave, $iv);;
                          $codigo2 = $encriptador->encriptar($nombre, $clave, $iv);
-                          $codigo2 = substr($codigo2, 0, 15);
+                          $codigo2 = substr($codigo2, 0, 16);
                           echo $codigo;
                           echo $codigo2;
                         if($codigo == $codigo2) {
