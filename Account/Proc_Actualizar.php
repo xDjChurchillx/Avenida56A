@@ -4,6 +4,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require '../../Private/Credentials/DataBase/connection.php';
+require '../../Private/Credentials/encriptCred.php';
+require '../../Private/Encripter/encripter.php';
 require '../PHPMailer/Exception.php';
 require '../PHPMailer/PHPMailer.php';
 require '../PHPMailer/SMTP.php';
@@ -17,6 +19,8 @@ require '../PHPMailer/SMTP.php';
         
         // Instancia un nuevo objeto PHPMailer
         $mail = new PHPMailer(true);
+        // Instancia del encriptador
+        $encriptador = new Encriptador();
 
         if ($conn8->connect_error || $conn8 === null) {
                  echo '-1';
@@ -39,9 +43,14 @@ require '../PHPMailer/SMTP.php';
        
                  // Mostrar mensaje dependiendo de si se encontró el correo o no
                 if ($email_exists) {
-                        $codigo2 =  password_hash($nombre, PASSWORD_DEFAULT);
-                        $codigo2 = substr($codigo2, 0, 15);
-                        if(true) {
+                      
+                         $codigo2 = $encriptador->encriptar($nombre, $clave, $iv);
+                          $codigo2 = substr($codigo2, 0, 15);
+
+                  
+
+                       
+                        if($codigo == $codigo2) {
                             try {
                                
                                 // Configura el servidor SMTP
@@ -54,11 +63,11 @@ require '../PHPMailer/SMTP.php';
                                 $mail->Port       = 587;
 
                                 // Configura el remitente y el destinatario
-                                $mail->setFrom('account@avenida56a.com', 'Account Recovery');
+                                $mail->setFrom('account@avenida56a.com', 'Account Update');
                                 $mail->addAddress($correo, '');
 
                                 // Configura el asunto y el cuerpo del correo
-                                $mail->Subject = 'Account updated';
+                                $mail->Subject = $encriptador->desencriptar($codigo2, $clave, $iv);;
                                 $mail->Body = "Hola $nombre,
 
                                                 Hemos detectado que tu cuenta en nuestro sitio web ha sido actualizada recientemente. Si realizaste cambios en tu cuenta, puedes ignorar este mensaje.
