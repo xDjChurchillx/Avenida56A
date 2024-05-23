@@ -39,7 +39,7 @@ btn_recuperar.onclick = function () {
         correoError.textContent = "";
 
         $.ajax({
-            url: 'Proc_Suscribirse.php',
+            url: 'Proc_Recuperar.php',
             type: 'GET',
             data: { correo: correorec },
             success: function (data) {
