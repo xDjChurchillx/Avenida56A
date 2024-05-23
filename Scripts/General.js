@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function ReadandSetUser() {
     Logout.classList.toggle("desactivar");
-    var usuarioGuardado = sessionStorage.getItem('Avn56User');
+    var usuarioGuardado = localStorage.getItem('Avn56User');
     if (usuarioGuardado) {
         // Convertir los datos de JSON a objeto
         Avn56User = JSON.parse(usuarioGuardado);
@@ -32,11 +32,11 @@ function ReadandSetUser() {
         correo = Avn56User[0].correo;
         nombre = Avn56User[0].nombre;
         contra = Avn56User[0].pswrd;
-
+        sessionStorage.setItem('Avn56User', usuarioGuardado);
     } else {
-        var Avn56UserString = localStorage.getItem('Avn56User');
+        var Avn56UserString = sessionStorage.getItem('Avn56User');
         if (Avn56UserString !== null) {
-            sessionStorage.setItem('Avn56User', Avn56UserString);
+
             Avn56User = JSON.parse(Avn56UserString);
             correo = Avn56User[0].correo;
             nombre = Avn56User[0].nombre;
