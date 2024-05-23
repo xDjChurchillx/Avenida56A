@@ -34,10 +34,11 @@ registroLink.addEventListener("click", registroclik);
 btn_recuperar.addEventListener("click", recuperar);
 $(document).ready(function () {
     if (filtro !== null) {
+        console.log('filtro='+filtro);
         if (filtro === 'recovery') {
             popup.style.display = 'block';
         }
-        console.log(filtro);
+        
         if (filtro.length > 3) {
             if (filtro.charAt(0) === '%') {
                 filtro = filtro.substring(1);
