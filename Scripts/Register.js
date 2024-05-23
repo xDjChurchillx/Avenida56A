@@ -44,7 +44,7 @@
 
     if (contrasena !== confirmarContrasena) {
         contrasenaError.textContent = "Las contrase\u00F1as no coinciden.";
-        confirmarContrasenaError.textContent = "Las contraseñas no coinciden.";
+        confirmarContrasenaError.textContent = "Las contrase\u00F1as no coinciden.";
         isValid = false;
     }
     let telefonoPattern = /^(\(\+\d{1,3}(\-\d+)*\)|\+\d)\d+(\-\d+)*$/; // Formato: (+XX)XXX-XXX-XXXX
