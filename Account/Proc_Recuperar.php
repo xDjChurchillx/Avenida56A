@@ -17,6 +17,8 @@ require '../PHPMailer/SMTP.php';
         $codigo = '';
         // Instancia un nuevo objeto PHPMailer
         $mail = new PHPMailer(true);
+          // Instancia del encriptador
+        $encriptador = new Encriptador();
 
         if ($conn8->connect_error || $conn8 === null) {
                  echo '-1';
