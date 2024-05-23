@@ -47,7 +47,7 @@ require '../PHPMailer/SMTP.php';
                          $codigo2 = $encriptador->encriptar($nombre, $clave, $iv);
                           echo $codigo2;
                            echo '-';
-                          $codigo2 = substr($codigo2, 0, 18);
+                          $codigo2 = substr($codigo2, 0, 15);
                           echo $codigo2;
                            echo '-';
                           echo $codigo;
