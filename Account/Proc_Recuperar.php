@@ -34,7 +34,7 @@ require '../../Private/Credentials/DataBase/connection.php';
        
          // Mostrar mensaje dependiendo de si se encontró el correo o no
                 if ($email_exists) {
-                
+                  echo "1";  
                 } else {
                    echo "-1";                            
                 }
