@@ -192,7 +192,6 @@ function recuperar() {
                                 }
                             ];
                              localStorage.setItem('Avn56User', JSON.stringify(newAvn56User));
-                            sessionStorage.setItem('Avn56User', JSON.stringify(newAvn56User));
                            
                         }
                     } catch (error) {
