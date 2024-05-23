@@ -81,6 +81,7 @@ function cambiar() {
     event.preventDefault();
     if (!bloquearEnvio) { // Verificar si no se está bloqueando el envío
         bloquearEnvio = true; // Bloquear el envío de la solicitud
+        btn_cambiar.classList.add("active-button");
         btn_cambiar.disabled = true; // Desactivar el botón
 
         var correoFinal = document.getElementById("correoFinal").value;
@@ -140,6 +141,7 @@ function recuperar() {
     event.preventDefault();
     if (!bloquearEnvio) { // Verificar si no se está bloqueando el envío
         bloquearEnvio = true; // Bloquear el envío de la solicitud
+        btn_recuperar.classList.add("active-button");
         btn_recuperar.disabled = true; // Desactivar el botón
 
         var correorec = document.getElementById("correorec").value;
@@ -215,6 +217,8 @@ function habilitarEnvio() {
     bloquearEnvio = false; // Permitir el envío de la solicitud
     btn_recuperar.disabled = false; // Habilitar el botón
     btn_cambiar.disabled = false;
+    btn_recuperar.classList.remove("active-button");
+    btn_cambiar.classList.remove("active-button");
 }
 function validarFormulario() {
     correoL = document.getElementById("correo").value;
