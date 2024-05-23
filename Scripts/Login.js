@@ -128,7 +128,8 @@ function cambiar() {
 
                             alert('Perfil Actualizado');
                         } else {
-                         console.log(data);
+                            console.log(data);
+                            console.log(lineas[0]);
                         alert(data);
                         }
                        
