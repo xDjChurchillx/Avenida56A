@@ -15,7 +15,7 @@ $(document).ready(function () {
             correoError.textContent = "El correo electr\u00D3nico no puede tener m\u00E1s de 100 caracteres.";
             isValid = false;
         }
-        let correoPattern = /^\w+@\w+.com$/; // Formato: (+XX)XXX-XXX-XXXX
+        let correoPattern = /^\w+@\w+.com$/; // Formato: aaa@aa.com
         if (!correoPattern.test(correosub)) {
             correoError.textContent = "El correo es invalido.";
 
