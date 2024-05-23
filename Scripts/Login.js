@@ -103,6 +103,10 @@ function cambiar() {
             pswrdError.textContent = "La contrase\u00F1a no puede tener m\u00E1s de 50 caracteres.";
             habilitarEnvio(); // Habilitar el envío de la solicitud
             return false;
+        } else if (contraFinal.length < 8) {
+            pswrdError.textContent = "La contrase\u00F1a no puede tener menos de 8 caracteres.";
+            habilitarEnvio(); // Habilitar el envío de la solicitud
+            return false;
         } else {
             correoError3.textContent = "";
             pswrdError.textContent = "";
@@ -114,7 +118,7 @@ function cambiar() {
                     try {
                         data = data.trim();
                         console.log(data);
-                        
+                        alert(data);
                     } catch (error) {
                         console.log('Se ha producido un error:', error.message);
                     }
