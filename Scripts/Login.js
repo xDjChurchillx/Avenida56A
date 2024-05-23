@@ -129,7 +129,9 @@ function cambiar() {
                                     pswrd: res.encontra
                                 }
                             ];
+                            localStorage.clear();
                             localStorage.setItem('Avn56User', JSON.stringify(newAvn56User));
+                            sessionStorage.clear();
                             sessionStorage.setItem('Avn56User', JSON.stringify(newAvn56User));
                             console.log(localStorage.getItem('Avn56User'));
                             alert('Perfil Actualizado');
