@@ -4,6 +4,7 @@ let correoErrorL = document.getElementById("correoError");
 let contrasenaErrorL = document.getElementById("contrasenaError");
 let contrasenaLink = document.getElementById("contrasenaLink");
 let registroLink = document.getElementById("registroLink");
+let recuperarLink = document.getElementById("recuperarLink");
 let popup = document.getElementById('popupContainer');
 let popup2 = document.getElementById('popupContainer2');
 let popupclose = document.getElementById('closePopup');
@@ -30,6 +31,7 @@ popupclose.onclick = function () {
 popupclose2.onclick = function () {
     popup2.style.display = 'none';
 };
+recuperarLink.addEventListener("click", recuperarclik)
 registroLink.addEventListener("click", registroclik);
 btn_recuperar.addEventListener("click", recuperar);
 $(document).ready(function () {
@@ -117,6 +119,14 @@ function registroclik(){
       
     } else {
         window.location.href = 'Register.html';
+    }
+}
+function recuperarclik() {
+    if (window.self !== window.top) {
+        window.parent.location.href = '../Account/Login.html?filter=recovery';
+
+    } else {
+        window.location.href = 'Login.html?filter=recovery';
     }
 }
 
