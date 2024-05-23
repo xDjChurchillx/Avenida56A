@@ -38,9 +38,9 @@ $(document).ready(function () {
                     if (!isNullOrEmpty(correorecL)) {
                         if (nombrelog === '-1') {
                             var correorec2 = document.getElementById("correoFinal");
-                            correorec2.value = correorecL;
-                           
+                            correorec2.value = correorecL;                           
                             correorec2.focus();
+                            correorec2.readOnly = true;
                         }
 
                     }
