@@ -14,9 +14,12 @@ require '../PHPMailer/SMTP.php';
  try {
     
         $correo = isset($_GET['correo']) ? $_GET['correo'] : '';
+         $nombre = isset($_GET['nombre']) ? $_GET['nombre'] : '';
+          $telefono = isset($_GET['telefono']) ? $_GET['telefono'] : '';
         $contra = isset($_GET['contra']) ? $_GET['contra'] : '';
+         $contraEn = isset($_GET['contraEn']) ? $_GET['contraEn'] : '';
+        $noticias = isset($_GET['noticias']) ? $_GET['noticias'] : '';
         $codigo = isset($_GET['codigo']) ? $_GET['codigo'] : '';
-        $nombre = '';
         
         // Instancia un nuevo objeto PHPMailer
         $mail = new PHPMailer(true);
@@ -25,8 +28,12 @@ require '../PHPMailer/SMTP.php';
 
         if ($conn8->connect_error || $conn8 === null) {
                  echo '-1';
+                 exit();
             }     
-         
+         if ($conn9->connect_error || $conn9 === null) {
+                 echo '-1';
+                 exit();
+            } 
             $queryListar = "CALL Cte_ListCorreos('$correo')";
             $result = mysqli_query($conn8, $queryListar);
             if ($result === false) {
@@ -51,9 +58,15 @@ require '../PHPMailer/SMTP.php';
                           $nombreDia =  $encriptador->encriptar($nombreDia, $clave, $iv);
                           $nombreDia = substr($nombreDia, 0, 10);
                           $codigo2 = $codigo2 ."&". $nombreDia;
-                          
+                         
                         if($codigo == $codigo2) {
                             try {
+
+                              $queryUpdate = "CALL Cte_Update('$correo','$nombre','$telefono','$contra','$contraEn','$noticias')";
+                               $updateresult = mysqli_query($conn9, $queryUpdate);
+                               echo $queryUpdate;
+
+
                                
                               // Configura el servidor SMTP
                                 $mail->isSMTP();
@@ -86,6 +99,7 @@ require '../PHPMailer/SMTP.php';
                                  echo 'Perfil Actualizado';
                             } catch (Exception $e) {
                                 echo 'Error al Actualizar Perfil';
+                                exit();
                             }   
                         }else {
 	                        echo 'Error al Actualizar Perfil(codigo de recuperacion invalido)';

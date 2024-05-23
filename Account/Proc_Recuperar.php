@@ -23,6 +23,7 @@ require '../PHPMailer/SMTP.php';
 
         if ($conn8->connect_error || $conn8 === null) {
                  echo '-1';
+                    exit();
             }     
          
             $queryListar = "CALL Cte_ListCorreos('$correo')";
