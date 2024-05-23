@@ -80,6 +80,18 @@ function recuperar() {
                         data = data.trim();
                         console.log(data);
                         alert(data);
+                        if (data == "") {
+                            var newAvn56User = [
+                                {
+                                    correo: correorec,
+                                    nombre: '',
+                                    pswrd: ''
+                                }
+                            ];
+                            console.log(newAvn56User)
+                            localStorage.setItem('Avn56User', JSON.stringify(newAvn56User));
+                           
+                        }
                     } catch (error) {
                         console.log('Se ha producido un error:', error.message);
                     }

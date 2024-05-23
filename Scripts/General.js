@@ -18,6 +18,10 @@ let nombre = null;
 let contra = null;
 let Avn56User = null;
 
+document.addEventListener("DOMContentLoaded", function () {
+    ReadandSetUser();
+});
+
 function ReadandSetUser() {
     Logout.classList.toggle("desactivar");
     var usuarioGuardado = sessionStorage.getItem('Avn56User');
@@ -26,6 +30,7 @@ function ReadandSetUser() {
         Avn56User = JSON.parse(usuarioGuardado);
 
         correo = Avn56User[0].correo;
+        nombre = Avn56User[0].nombre;
         contra = Avn56User[0].pswrd;
 
     } else {
@@ -170,6 +175,3 @@ if (back !== null) {
 function volverMenu() {
     menu_box.classList.remove("active");
 }
-document.addEventListener("DOMContentLoaded", function () {
-    ReadandSetUser();   
-});
