@@ -14,13 +14,14 @@ require '../PHPMailer/SMTP.php';
  try {
     
         $correo = isset($_GET['correo']) ? $_GET['correo'] : '';
-         $nombre = isset($_GET['nombre']) ? $_GET['nombre'] : '';
-          $telefono = isset($_GET['telefono']) ? $_GET['telefono'] : '';
+        $nombre = isset($_GET['nombre']) ? $_GET['nombre'] : '';
+        $telefono = isset($_GET['telefono']) ? $_GET['telefono'] : '';
         $contra = isset($_GET['contra']) ? $_GET['contra'] : '';
-         $contraEn = isset($_GET['contraEn']) ? $_GET['contraEn'] : '';
+        $contraEn = isset($_GET['contraEn']) ? $_GET['contraEn'] : '';
         $noticias = isset($_GET['noticias']) ? $_GET['noticias'] : '';
         $codigo = isset($_GET['codigo']) ? $_GET['codigo'] : '';
-        
+        $nombrer = '';
+
         // Instancia un nuevo objeto PHPMailer
         $mail = new PHPMailer(true);
         // Instancia del encriptador
@@ -44,7 +45,7 @@ require '../PHPMailer/SMTP.php';
                     // Verificar si el correo actual es igual al recibido en el formulario
                     if ($row['Correo'] == $correo) {
                         $email_exists = true;
-                        $nombre = $row['Nombre'];
+                        $nombrer = $row['Nombre'];
                         break; // Salir del bucle ya que hemos encontrado una coincidencia
                     }
                 }
@@ -52,7 +53,7 @@ require '../PHPMailer/SMTP.php';
                  // Mostrar mensaje dependiendo de si se encontró el correo o no
                 if ($email_exists) {
                       //$encriptador->desencriptar('', $clave, $iv);;
-                          $codigo2 = $encriptador->encriptar($nombre, $clave, $iv);                         
+                          $codigo2 = $encriptador->encriptar($nombrer, $clave, $iv);                         
                           $codigo2 = substr($codigo2, 0, 10);
                           $nombreDia = date("l");
                           $nombreDia =  $encriptador->encriptar($nombreDia, $clave, $iv);
@@ -83,7 +84,7 @@ require '../PHPMailer/SMTP.php';
 
                                 // Configura el asunto y el cuerpo del correo
                                 $mail->Subject = "Account Update";
-                                $mail->Body = "Hola $nombre,
+                                $mail->Body = "Hola $nombrer,
 
                                                 Hemos detectado que tu cuenta en nuestro sitio web ha sido actualizada recientemente. Si realizaste cambios en tu cuenta, puedes ignorar este mensaje.
 
