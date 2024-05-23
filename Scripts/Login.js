@@ -32,6 +32,7 @@ $(document).ready(function () {
                 var UserString = localStorage.getItem('Avn56User');
                 if (UserString !== null) {
                     Avn56User = JSON.parse(UserString);
+                    console.log(Avn56User);
                     var correorecL = Avn56User[0].correo;
                     var nombrelog = Avn56User[0].nombre;
                     if (!isNullOrEmpty(correorecL)) {
