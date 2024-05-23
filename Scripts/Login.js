@@ -37,7 +37,7 @@ $(document).ready(function () {
                     var nombrelog = Avn56User[0].nombre;
                     if (!isNullOrEmpty(correorecL)) {
                         if (nombrelog === '-1') {
-                            var correorec2 = document.getElementById("correorec2");
+                            var correorec2 = document.getElementById("correoFinal");
                             correorec2.value = correorecL;
                             correorec2.readOnly = true;
                             correorec2.focus();
