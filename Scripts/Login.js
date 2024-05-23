@@ -7,7 +7,7 @@ let registroLink = document.getElementById("registroLink");
 let popup = document.getElementById('popupContainer');
 let popupclose = document.getElementById('closePopup');
 let btn_recuperar = document.getElementById('btn_Recuperar');
-
+let bloq = true;
 let filtro = obtenerParametroURL('filter');
 
 function obtenerParametroURL(nombre) {
@@ -24,49 +24,54 @@ popupclose.onclick = function () {
     popup.style.display = 'none';
 };
 btn_recuperar.onclick = function () {
-    event.preventDefault();
-    btn_recuperar.disabled = true;
+    if (bloq) {
+        bloq = false;
+        event.preventDefault();
+        btn_recuperar.disabled = true;
 
-    var correorec = document.getElementById("correorec").value;
-    var correoError = document.getElementById("correoError");
+        var correorec = document.getElementById("correorec").value;
+        var correoError = document.getElementById("correoError");
 
-    if (correorec === "") {
-        correoError.textContent = "Por favor, ingresa tu correo electrónico.";
-        return false;
-    } else if (!/^\w+@\w+.com$/.test(correorec)) {
-        correoError.textContent = "Por favor, ingresa un correo electrónico válido.";
-        return false;
-    } else {
-        correoError.textContent = "";
+        if (correorec === "") {
+            correoError.textContent = "Por favor, ingresa tu correo electrónico.";
+            return false;
+        } else if (!/^\w+@\w+.com$/.test(correorec)) {
+            correoError.textContent = "Por favor, ingresa un correo electrónico válido.";
+            return false;
+        } else {
+            correoError.textContent = "";
 
-        $.ajax({
-            url: 'Proc_Recuperar.php',
-            type: 'GET',
-            data: { correo: correorec },
-            success: function (data) {
-                try {
-                    data = data.trim();
-                    console.log(data);
-                    alert(data);
-                } catch (error) {
-                    // Bloque de código que se ejecuta si se lanza una excepción dentro del bloque try
-                    console.log('Se ha producido un error:', error.message);
+            $.ajax({
+                url: 'Proc_Recuperar.php',
+                type: 'GET',
+                data: { correo: correorec },
+                success: function (data) {
+                    try {
+                        data = data.trim();
+                        console.log(data);
+                        alert(data);
+                    } catch (error) {
+                        // Bloque de código que se ejecuta si se lanza una excepción dentro del bloque try
+                        console.log('Se ha producido un error:', error.message);
+                    }
+
+
+                },
+                error: function (xhr, status, error) {
+                    console.error(status + ': ' + error);
                 }
-
-
-            },
-            error: function (xhr, status, error) {
-                console.error(status + ': ' + error);
-            }
-        });
+            });
 
 
 
 
 
 
+        }
+        btn_recuperar.disabled = false;
+        bloq = true;
     }
-    btn_recuperar.disabled = false;
+   
 
 
 }
