@@ -26,13 +26,13 @@ popupclose.onclick = function () {
 btn_recuperar.onclick = function () {
     event.preventDefault();
 
-    var correous = document.getElementById("correo").value;
+    var correorec = document.getElementById("correorec").value;
     var correoError = document.getElementById("correoError");
 
-    if (correous === "") {
+    if (correorec === "") {
         correoError.textContent = "Por favor, ingresa tu correo electrónico.";
         return false;
-    } else if (!/^\w+@\w+.com$/.test(correo)) {
+    } else if (!/^\w+@\w+.com$/.test(correorec)) {
         correoError.textContent = "Por favor, ingresa un correo electrónico válido.";
         return false;
     } else {
@@ -41,7 +41,7 @@ btn_recuperar.onclick = function () {
         $.ajax({
             url: 'Proc_Suscribirse.php',
             type: 'GET',
-            data: { correo: correosub },
+            data: { correo: correorec },
             success: function (data) {
                 try {
                     console.log('ready');
