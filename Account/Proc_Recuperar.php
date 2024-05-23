@@ -11,13 +11,9 @@ require '../../Private/Credentials/DataBase/connection.php';
                  window.location.href = '../index.html';</script>";            
                 exit();
             }
-            if ($conn9->connect_error || $conn9 === null) {
-                echo "<script>alert('La base de datos ha fallado');
-                 window.location.href = '../index.html';</script>";
-                exit();
-            }
+         
             $queryListar = "CALL Cte_ListCorreos('$correo')";
-            $result = mysqli_query($conn, $queryListar);
+            $result = mysqli_query($conn8, $queryListar);
             if ($result === false) {
                 echo "<script>alert('La base de datos ha fallado');
                  window.location.href = '../index.html';</script>";
