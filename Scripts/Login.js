@@ -181,8 +181,7 @@ function recuperar() {
                 success: function (data) {
                     try {
                         data = data.trim();
-                        console.log(data);
-                        alert(data);
+                        console.log(data);                        
                         if (data === 'Correo de recuperacion enviado, porfavor revisa tu correo') {
                             var newAvn56User = [
                                 {
@@ -194,6 +193,7 @@ function recuperar() {
                              localStorage.setItem('Avn56User', JSON.stringify(newAvn56User));
                            
                         }
+                        alert(data);
                     } catch (error) {
                         console.log('Se ha producido un error:', error.message);
                     }
