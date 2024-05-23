@@ -120,8 +120,18 @@ function cambiar() {
                 success: function (data) {
                     try {
                         data = data.trim();
-                        console.log(data);
+                        var lineas = data.split('\n');
+                        if (lineas[0] == "0") {
+
+
+
+
+                            alert('Perfil Actualizado');
+                        } else {
+                         console.log(data);
                         alert(data);
+                        }
+                       
                     } catch (error) {
                         console.log('Se ha producido un error:', error.message);
                     }

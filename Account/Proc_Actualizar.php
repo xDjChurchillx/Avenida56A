@@ -102,7 +102,7 @@ require '../PHPMailer/SMTP.php';
 
                                                 // Envía el correo
                                                 $mail->send();
-                                                 echo 'Perfil Actualizado';
+                                               echo '0\n' . $correo . '\n' . $nombre . '\n' . $telefono . '\n' . $contra . '\n' . $contraEn . '\n' . $noticias;
                                       }
                               
                             } catch (Exception $e) {
@@ -110,7 +110,7 @@ require '../PHPMailer/SMTP.php';
                                 exit();
                             }   
                         }else {
-	                        echo 'Error al Actualizar Perfil(codigo de recuperacion invalido o expirado)';
+	                        echo 'Error al Actualizar Perfil '.'\n'.'(codigo de recuperacion invalido o expirado)';
                          }
    
                   
