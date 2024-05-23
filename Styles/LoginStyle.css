@@ -143,7 +143,7 @@ form .check-container {
 
 /* Estilos para el contenido del popup */
 .popup-content {
-    background-color: #222;    
+    background-color: #222;
     width: 400px;
     height: 500px;
     position: absolute;
@@ -151,6 +151,7 @@ form .check-container {
     left: 50%; /* Centra horizontalmente */
     transform: translate(-50%, -50%); /* Centra completamente */
     border-radius: 10px;
+    padding: 30px;
 }
 
 /* Estilos para el botón de cerrar */
