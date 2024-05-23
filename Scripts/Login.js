@@ -120,15 +120,16 @@ function cambiar() {
                 success: function (data) {
                     try {
                         console.log(data);
-                        if (data.estado == "0") {
+                        var res = JSON.parse(data);
+                        if (res.estado == "0") {
 
 
 
 
                             alert('Perfil Actualizado');
                         } else {
-                            console.log(data.estado);
-                            alert(data.estado);
+                            console.log(res.estado);
+                            alert(res.estado);
                         }
                        
                     } catch (error) {
