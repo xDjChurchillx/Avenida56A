@@ -17,8 +17,14 @@ let filtro = extraerFiltroDeUrl(location.search);
 function extraerFiltroDeUrl(url) {
     console.log(url);
     var filtroIndex = url.indexOf('filter=');
-    console.log(filtroIndex);
-    return filtroIndex;
+    
+    if (filtroIndex !== -1) {
+        var filt = url.substring(filtroIndex + '?filter='.length);
+        console.log(filt);
+        return filt;
+    } else {
+        return null; 
+    }
 }
 
 popupclose.onclick = function () {
@@ -30,14 +36,20 @@ popupclose2.onclick = function () {
 registroLink.addEventListener("click", registroclik);
 btn_recuperar.addEventListener("click", recuperar);
 $(document).ready(function () {
-    if (filtro === 'recovery') {
-        popup.style.display = 'block';
+    if (filtro !== null) {
+        if (filtro === 'recovery') {
+            popup.style.display = 'block';
+        }
+        console.log(filtro);
+        if (filtro.length > 3) {
+            if (filtro.charAt(0) === '%') {
+                filtro = filtro.substring(1);
+                popup2.style.display = 'block';
+            }
+        }
+        
     }
-    console.log(filtro);
-    if (filtro.charAt(0) === '%') {
-        filtro = filtro.substring(1);
-        popup2.style.display = 'block';
-    }
+   
 });
 function recuperar() {
     if (!bloquearEnvio) { // Verificar si no se está bloqueando el envío
