@@ -65,11 +65,11 @@ require '../PHPMailer/SMTP.php';
                                       $email_exists = false;
                                       $queryUpdate = "CALL Cte_Update('$correo','$nombre','$telefono','$contra','$contraEn','$noticias')";
                                        $updateresult = mysqli_query($conn9, $queryUpdate);
-                                        while ($row = mysqli_fetch_assoc($result)) {
+                                        while ($row2 = mysqli_fetch_assoc($updateresult)) {
                                                 // Verificar si el correo actual es igual al recibido en el formulario
-                                                if ($row['Correo'] == $correo) {
+                                                if ($row2['Correo'] == $correo) {
                                                     $email_exists = true;
-                                                    $nombre = $row['Nombre'];
+                                                    $nombre = $row2['Nombre'];
                                                     break; // Salir del bucle ya que hemos encontrado una coincidencia
                                                 }
                                          }
