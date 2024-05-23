@@ -50,7 +50,7 @@ require '../PHPMailer/SMTP.php';
                           $nombreDia = date("l");
                           $nombreDia =  $encriptador->encriptar($nombreDia, $clave, $iv);
                           $nombreDia = substr($nombreDia, 0, 10);
-                          $codigo2 = $codigo2+$nombreDia;
+                          $codigo2 = $codigo2 . $nombreDia;
                           
                         if($codigo == $codigo2) {
                             try {
