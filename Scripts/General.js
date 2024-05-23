@@ -53,7 +53,8 @@ function ReadandSetUser() {
         Login.setAttribute("href", newHref);
         Logout.classList.toggle("desactivar");
     }
-
+    console.log('User:');
+    console.log(Avn56User);
 
 }
 function isNullOrEmpty(value) {

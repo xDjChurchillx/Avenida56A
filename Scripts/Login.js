@@ -122,9 +122,15 @@ function cambiar() {
                         console.log(data);
                         var res = JSON.parse(data);
                         if (res.estado == "0") {
-
-
-
+                            var newAvn56User = [
+                                {
+                                    correo: res.correo,
+                                    nombre: res.nombre,
+                                    pswrd: res.encontra
+                                }
+                            ];
+                            localStorage.setItem('Avn56User', JSON.stringify(newAvn56User));
+                            sessionStorage.setItem('Avn56User', JSON.stringify(newAvn56User));
 
                             alert('Perfil Actualizado');
                         } else {
@@ -185,8 +191,8 @@ function recuperar() {
                                     pswrd: ''
                                 }
                             ];
-                            console.log(newAvn56User)
-                            localStorage.setItem('Avn56User', JSON.stringify(newAvn56User));
+                             localStorage.setItem('Avn56User', JSON.stringify(newAvn56User));
+                            sessionStorage.setItem('Avn56User', JSON.stringify(newAvn56User));
                            
                         }
                     } catch (error) {

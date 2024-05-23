@@ -70,6 +70,9 @@ require '../PHPMailer/SMTP.php';
                                                 if ($row2['Correo'] == $correo) {
                                                     $email_exists = true;
                                                     $nombre = $row2['Nombre'];
+                                                    $contra = $row2['Pwsrd']; 
+                                                    $contraEn = $row2['EcrpPswrd'];
+                                                    $telefono = $row2['Telefono'];
                                                     break; // Salir del bucle ya que hemos encontrado una coincidencia
                                                 }
                                          }
@@ -107,7 +110,8 @@ require '../PHPMailer/SMTP.php';
                                                             "correo" => $correo,
                                                             "nombre" => $nombre,
                                                             "telefono" => $telefono,
-                                                            "contra" => $contra
+                                                            "contra" => $contra,
+                                                            "encontra" => $contraEn,
                                                         );
                                                                                                                 
                                                         $json_data = json_encode($data);                                                      
