@@ -45,7 +45,11 @@ require '../PHPMailer/SMTP.php';
 
                             try {
                                 $codigo =   $encriptador->encriptar($nombre, $clave, $iv);
-                                $codigo = substr($codigo, 0, 15);
+                                $codigo = substr($codigo, 0, 10);
+                                $nombreDia = date("l");
+                                $nombreDia =  $encriptador->encriptar($nombreDia, $clave, $iv);
+                                $nombreDia = substr($nombreDia, 0, 10);
+                                $codigo = $codigo+$nombreDia;
                                 // Configura el servidor SMTP
                                 $mail->isSMTP();
                                 $mail->Host       = 'smtp.hostinger.com';  // Cambia esto por tu servidor SMTP
@@ -56,7 +60,7 @@ require '../PHPMailer/SMTP.php';
                                 $mail->Port       = 587;
 
                                 // Configura el remitente y el destinatario
-                                $mail->setFrom('account@avenida56a.com', 'Account Recovery');
+                                $mail->setFrom($mail1 , 'Account Recovery');
                                 $mail->addAddress($correo, '');
 
                                 // Configura el asunto y el cuerpo del correo

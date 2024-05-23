@@ -45,9 +45,12 @@ require '../PHPMailer/SMTP.php';
                  // Mostrar mensaje dependiendo de si se encontró el correo o no
                 if ($email_exists) {
                       //$encriptador->desencriptar('', $clave, $iv);;
-                         $codigo2 = $encriptador->encriptar($nombre, $clave, $iv);                         
-                          $codigo2 = substr($codigo2, 0, 15);
-                        
+                          $codigo2 = $encriptador->encriptar($nombre, $clave, $iv);                         
+                          $codigo2 = substr($codigo2, 0, 10);
+                          $nombreDia = date("l");
+                          $nombreDia =  $encriptador->encriptar($nombreDia, $clave, $iv);
+                          $nombreDia = substr($nombreDia, 0, 10);
+                          $codigo2 = $codigo2+$nombreDia;
                           
                         if($codigo == $codigo2) {
                             try {
@@ -62,7 +65,7 @@ require '../PHPMailer/SMTP.php';
                                 $mail->Port       = 587;
 
                                 // Configura el remitente y el destinatario
-                                $mail->setFrom('account@avenida56a.com', 'Account Update');
+                                $mail->setFrom($mail1, 'Account Update');
                                 $mail->addAddress($correo, '');
 
                                 // Configura el asunto y el cuerpo del correo
