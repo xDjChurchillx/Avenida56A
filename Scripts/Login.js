@@ -15,6 +15,7 @@ let filtro = extraerFiltroDeUrl(location.search);
 
 
 function extraerFiltroDeUrl(url) {
+    console.log(url);
     const index = url.indexOf('?');
     if (index === -1) {
         return null;
