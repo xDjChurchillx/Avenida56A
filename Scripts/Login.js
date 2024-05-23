@@ -37,13 +37,16 @@ $(document).ready(function () {
         console.log('filtro='+filtro);
         if (filtro === 'recovery') {
             popup.style.display = 'block';
+            console.log('test1');
         }
         
         if (filtro.length > 3) {
             if (filtro.charAt(0) === '%') {
                 filtro = filtro.substring(1);
                 popup2.style.display = 'block';
+                console.log('test2');
             }
+            console.log('test3');
         }
         
     }
