@@ -6,6 +6,8 @@ let contrasenaLink = document.getElementById("contrasenaLink");
 let registroLink = document.getElementById("registroLink");
 let popup = document.getElementById('popupContainer');
 let popupclose = document.getElementById('closePopup');
+let btn_recuperar = document.getElementById('btn_Recuperar');
+
 let filtro = obtenerParametroURL('filter');
 
 function obtenerParametroURL(nombre) {
@@ -21,7 +23,52 @@ if (filtro === 'recovery') {
 popupclose.onclick = function () {
     popup.style.display = 'none';
 };
+btn_recuperar.onclick = function () {
+    event.preventDefault();
 
+    var correous = document.getElementById("correo").value;
+    var correoError = document.getElementById("correoError");
+
+    if (correous === "") {
+        correoError.textContent = "Por favor, ingresa tu correo electrónico.";
+        return false;
+    } else if (!/^\w+@\w+.com$/.test(correo)) {
+        correoError.textContent = "Por favor, ingresa un correo electrónico válido.";
+        return false;
+    } else {
+        correoError.textContent = "";
+
+        $.ajax({
+            url: 'Proc_Suscribirse.php',
+            type: 'GET',
+            data: { correo: correosub },
+            success: function (data) {
+                try {
+                    console.log('ready');
+                    console.log(data);
+
+                } catch (error) {
+                    // Bloque de código que se ejecuta si se lanza una excepción dentro del bloque try
+                    console.log('Se ha producido un error:', error.message);
+                }
+
+
+            },
+            error: function (xhr, status, error) {
+                console.error(status + ': ' + error);
+            }
+        });
+
+
+
+
+
+
+    }
+
+
+
+}
 registroLink.addEventListener("click", registroclik);
 
 function registroclik(){
