@@ -66,7 +66,7 @@ require '../PHPMailer/SMTP.php';
                                 $mail->addAddress($correo, '');
 
                                 // Configura el asunto y el cuerpo del correo
-                                $mail->Subject = 
+                                $mail->Subject = "Account Update";
                                 $mail->Body = "Hola $nombre,
 
                                                 Hemos detectado que tu cuenta en nuestro sitio web ha sido actualizada recientemente. Si realizaste cambios en tu cuenta, puedes ignorar este mensaje.
