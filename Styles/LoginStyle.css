@@ -130,3 +130,43 @@ form .check-container {
         width: 20px;
         height: 20px;
     }
+
+.popup {
+    display: none;
+    position: fixed; /* Se mantiene fijo en la ventana del navegador */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+}
+
+/* Estilos para el contenido del popup */
+.popup-content {
+    background-color: transparent;
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Centra completamente */
+    border-radius: 10px;
+}
+
+/* Estilos para el botón de cerrar */
+.close {
+    margin: 15px;
+    position: absolute;
+    color: #aaa;
+    right: 10px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
