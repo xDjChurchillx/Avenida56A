@@ -24,7 +24,10 @@
         nombreError.textContent = "El nombre no puede tener m\u00E1s de 20 caracteres.";
         isValid = false;
     }
-
+    if (nombre.length < 4) {
+        nombreError.textContent = "El nombre no puede tener menos de 4 caracteres.";
+        isValid = false;
+    }
     if (correo.length > 100) {
         correoError.textContent = "El correo electr\u00D3nico no puede tener m\u00E1s de 100 caracteres.";
         isValid = false;

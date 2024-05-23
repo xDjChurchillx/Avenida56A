@@ -5,8 +5,11 @@ let contrasenaErrorL = document.getElementById("contrasenaError");
 let contrasenaLink = document.getElementById("contrasenaLink");
 let registroLink = document.getElementById("registroLink");
 let popup = document.getElementById('popupContainer');
+let popup2 = document.getElementById('popupContainer');
 let popupclose = document.getElementById('closePopup');
+let popupclose2 = document.getElementById('closePopup2');
 let btn_recuperar = document.getElementById('btn_Recuperar');
+let btn_recuperar2 = document.getElementById('btn_Recuperar2');
 var bloquearEnvio = false;
 let filtro = obtenerParametroURL('filter');
 
@@ -17,15 +20,24 @@ function obtenerParametroURL(nombre) {
     return resultados === null ? '' : decodeURIComponent(resultados[1].replace(/\+/g, ' '));
 }
 
-if (filtro === 'recovery') {
-    popup.style.display = 'block';
-}
+
 popupclose.onclick = function () {
     popup.style.display = 'none';
 };
+popupclose2.onclick = function () {
+    popup2.style.display = 'none';
+};
 registroLink.addEventListener("click", registroclik);
 btn_recuperar.addEventListener("click", recuperar);
-
+$(document).ready(function () {
+    if (filtro === 'recovery') {
+        popup.style.display = 'block';
+    }
+    if (filtro.charAt(0) === '%') {
+        filtro = filtro.substring(1);
+        popup2.style.display = 'block';
+    }
+});
 function recuperar() {
     if (!bloquearEnvio) { // Verificar si no se está bloqueando el envío
         bloquearEnvio = true; // Bloquear el envío de la solicitud
