@@ -60,7 +60,7 @@ require '../PHPMailer/SMTP.php';
 
                                                Hemos detectado que has solicitado restablecer tu contraseña en nuestro sitio web. Por favor, haz clic en el siguiente enlace para definir una nueva contraseña:
 
-                                               'https://avenida56a.com/Account/Login.html?filter=%codigo'
+                                               'https://avenida56a.com/Account/Login.html?filter=%$codigo'
 
                                                Si no solicitaste este cambio, por favor ignora este mensaje.
  
