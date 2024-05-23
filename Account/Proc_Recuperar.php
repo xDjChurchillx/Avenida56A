@@ -4,6 +4,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require '../../Private/Credentials/DataBase/connection.php';
+require '../../Private/Credentials/encriptCred.php';
+require '../../Private/Encripter/encripter.php';
 require '../PHPMailer/Exception.php';
 require '../PHPMailer/PHPMailer.php';
 require '../PHPMailer/SMTP.php';
@@ -39,7 +41,7 @@ require '../PHPMailer/SMTP.php';
                 if ($email_exists) {
 
                             try {
-                                $codigo =  password_hash($nombre, PASSWORD_DEFAULT);
+                                $codigo =   $encriptador->encriptar($nombre, $clave, $iv);
                                 $codigo = substr($codigo, 0, 15);
                                 // Configura el servidor SMTP
                                 $mail->isSMTP();

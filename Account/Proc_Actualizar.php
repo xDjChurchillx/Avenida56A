@@ -43,13 +43,10 @@ require '../PHPMailer/SMTP.php';
        
                  // Mostrar mensaje dependiendo de si se encontró el correo o no
                 if ($email_exists) {
-                      
+                      //$encriptador->desencriptar('', $clave, $iv);;
                          $codigo2 = $encriptador->encriptar($nombre, $clave, $iv);
                           $codigo2 = substr($codigo2, 0, 15);
 
-                        echo $codigo2;
-
-                       
                         if($codigo == $codigo2) {
                             try {
                                
@@ -67,7 +64,7 @@ require '../PHPMailer/SMTP.php';
                                 $mail->addAddress($correo, '');
 
                                 // Configura el asunto y el cuerpo del correo
-                                $mail->Subject = $encriptador->desencriptar($codigo2, $clave, $iv);;
+                                $mail->Subject = 
                                 $mail->Body = "Hola $nombre,
 
                                                 Hemos detectado que tu cuenta en nuestro sitio web ha sido actualizada recientemente. Si realizaste cambios en tu cuenta, puedes ignorar este mensaje.
