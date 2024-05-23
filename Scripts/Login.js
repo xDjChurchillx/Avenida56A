@@ -11,15 +11,24 @@ let popupclose2 = document.getElementById('closePopup2');
 let btn_recuperar = document.getElementById('btn_Recuperar');
 let btn_recuperar2 = document.getElementById('btn_Recuperar2');
 var bloquearEnvio = false;
-let filtro = obtenerParametroURL('filter');
+let filtro = extraerFiltroDeUrl(location.search);
 
-function obtenerParametroURL(nombre) {
-    nombre = nombre.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    var regex = new RegExp('[\\?&]' + nombre + '=([^&#%]*)');
-    var resultados = regex.exec(location.search);
-    return resultados === null ? '' : decodeURIComponent(resultados[1].replace(/\+/g, ' '));
+
+function extraerFiltroDeUrl(url) {
+    const index = url.indexOf('?');
+    if (index === -1) {
+        return null;
+    }
+    const queryString = url.slice(index + 1);
+    const parametros = queryString.split('&');
+    for (const parametro of parametros) {
+        const [clave, valor] = parametro.split('=');
+        if (clave === 'filtro') {
+            return decodeURIComponent(valor);
+        }
+    }
+    return null;
 }
-
 
 popupclose.onclick = function () {
     popup.style.display = 'none';
