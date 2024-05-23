@@ -1,11 +1,23 @@
 ﻿let listasellers = document.querySelector('#listaBestSellers');
 let listafavoritos = document.querySelector('#listaBestLikes');
 let btn_sub = document.querySelector('#btn_Sub');
+let filtro = obtenerParametroURL('filter');
 
 let css = '';
 
-
+function obtenerParametroURL(nombre) {
+    nombre = nombre.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + nombre + '=([^&#]*)');
+    var resultados = regex.exec(location.search);
+    return resultados === null ? '' : decodeURIComponent(resultados[1].replace(/\+/g, ' '));
+}
 $(document).ready(function () {
+    if (filtro === 'recovery') {
+        popup.style.display = 'block';
+    }
+    popupclose.onclick = function () {
+        popup.style.display = 'none';
+    };
     btn_sub.onclick = function () {
         event.preventDefault();
         var correosub = document.getElementById("correosub").value;

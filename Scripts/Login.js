@@ -4,6 +4,8 @@ let correoErrorL = document.getElementById("correoError");
 let contrasenaErrorL = document.getElementById("contrasenaError");
 let contrasenaLink = document.getElementById("contrasenaLink");
 let registroLink = document.getElementById("registroLink");
+let popup = document.getElementById('popupContainer');
+let popupclose = document.getElementById('closePopup');
 
 registroLink.addEventListener("click", registroclik);
 
