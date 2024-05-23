@@ -109,8 +109,8 @@ function registroclik(){
 }
 
 function validarFormulario() {
-
-   
+    correoL = document.getElementById("correo").value;
+    contrasenaL = document.getElementById("contrasena").value;
     let isValid = true;
 
     correoErrorL.textContent = ""; // Limpiar mensaje de error
@@ -125,7 +125,7 @@ function validarFormulario() {
         contrasenaErrorL.textContent = "La contrase\u00F1a no puede tener m\u00E1s de 50 caracteres.";
         isValid = false;
     }
-    let correoPattern = /^\w+@\w+.com$/; // Formato: (+XX)XXX-XXX-XXXX
+    let correoPattern = /^\w+@\w+.com$/; // Formato: email
     if (!correoPattern.test(correoL)) {
         correoError.textContent = "El correo es invalido.";
 
