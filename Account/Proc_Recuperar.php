@@ -36,7 +36,7 @@ require '../../Private/Credentials/DataBase/connection.php';
                 if ($email_exists) {
                 
                 } else {
-                   echo "<script>alert('Este Correo no pertenece a una cuenta');</script>";                            
+                   echo "-1";                            
                 }
            
 
