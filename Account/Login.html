@@ -91,17 +91,23 @@
                     <label><input type="checkbox" name="recordar" /></label>
                     <label>Recordar Usuario</label>
                 </div>
-                <br />   
+                <br />
 
                 <button type="submit" name="submit">Iniciar sesión</button>
-                <a id="contrasenaLink" href="#">¿Perdiste tu contraseña? Recupera tu cuenta</a> 
-                 <a id="registroLink" href="#">¿Aun no tienes cuenta? Registrate</a> 
-               
+                <a id="contrasenaLink" href="#">¿Perdiste tu contraseña? Recupera tu cuenta</a>
+                <a id="registroLink" href="#">¿Aun no tienes cuenta? Registrate</a>
+
 
 
             </form>
         </div>
-
+        <div id="popupContainer" class="popup">
+            <div class="popup-content">
+                <span id="closePopup" class="close">&times;</span>
+                <!--/Ref/-->
+                <iframe id="loginframe" src="../Account/Login.html" scrolling="no"></iframe>
+            </div>
+        </div>
     </main>
     <script src="../Scripts/Login.js"></script>
 </body>
