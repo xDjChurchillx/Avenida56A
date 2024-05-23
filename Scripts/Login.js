@@ -131,7 +131,7 @@ function cambiar() {
                             ];
                             localStorage.setItem('Avn56User', JSON.stringify(newAvn56User));
                             sessionStorage.setItem('Avn56User', JSON.stringify(newAvn56User));
-
+                            console.log(localStorage.getItem('Avn56User'));
                             alert('Perfil Actualizado');
                         } else {
                             console.log(res.estado);
