@@ -6,11 +6,14 @@ require '../../Private/Credentials/DataBase/connection.php';
     
         $correo = isset($_GET['correo']) ? $_GET['correo'] : '';
 
-       
+        if ($conn8->connect_error || $conn8 === null) {
+                 echo '-1';
+            }     
+         
             $queryListar = "CALL Cte_ListCorreos('$correo')";
             $result = mysqli_query($conn8, $queryListar);
             if ($result === false) {
-               
+                echo '-1';
             } else {
                 $email_exists = false;
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -21,10 +24,15 @@ require '../../Private/Credentials/DataBase/connection.php';
                     }
                 }
        
-      
-           
-                 echo '-1';    
+                 // Mostrar mensaje dependiendo de si se encontró el correo o no
+                if ($email_exists) {
+                  echo '1';
+                } else {
+                  echo '-1';                          
+                }
+            }
+
     } catch (Exception $ex) {
-        
+         echo '-1';
     }
     ?>
