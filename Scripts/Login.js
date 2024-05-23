@@ -44,12 +44,8 @@ btn_recuperar.onclick = function () {
             data: { correo: correorec },
             success: function (data) {
                 try {
-                    console.log('ready');
                     console.log(data);
-                    if (data === "-1") {
-                        alert('Este Correo no pertenece a un correo');
-                    }
-
+                    alert(data);
                 } catch (error) {
                     // Bloque de código que se ejecuta si se lanza una excepción dentro del bloque try
                     console.log('Se ha producido un error:', error.message);

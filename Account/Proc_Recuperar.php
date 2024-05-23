@@ -22,7 +22,7 @@ require '../PHPMailer/SMTP.php';
             $queryListar = "CALL Cte_ListCorreos('$correo')";
             $result = mysqli_query($conn8, $queryListar);
             if ($result === false) {
-                echo '-1';
+                echo 'Error al recuperar cuenta';
             } else {
                 $email_exists = false;
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -51,26 +51,26 @@ require '../PHPMailer/SMTP.php';
                                 $mail->addAddress($correo, '');
 
                                 // Configura el asunto y el cuerpo del correo
-                                $mail->Subject = '¡Hola desde PHP!';
+                                $mail->Subject = 'Account Recovery';
                                 $mail->Body    = '¡Este es un correo de prueba enviado desde PHP!';
 
                                 // Envía el correo
                                 $mail->send();
-                                echo '1';
+                                 echo 'Correo de recuperacion enviado, porfavor revisa tu correo';
                             } catch (Exception $e) {
-                                echo '-1';
+                                echo 'Error al recuperar cuenta';
                             }
 
 
 
                   
                 } else {
-                  echo '-1';                          
+                  echo 'Este Correo no pertenece a una cuenta';                        
                 }
             }
 
     } catch (Exception $ex) {
-         echo '-1';
+         echo 'Error al recuperar cuenta';
     }
     ?>
 
