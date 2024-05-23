@@ -102,7 +102,7 @@ require '../PHPMailer/SMTP.php';
 
                                                 // Envía el correo
                                                 $mail->send();
-                                               echo '0\n' . $correo . '\n' . $nombre . '\n' . $telefono . '\n' . $contra . '\n' . $contraEn . '\n' . $noticias;
+                                               echo '0\n' . $correo . '\n' . $nombre . '\n' . $telefono . '\n' . $contra;
                                       }
                               
                             } catch (Exception $e) {
