@@ -65,10 +65,7 @@ require '../PHPMailer/SMTP.php';
 
                               $queryUpdate = "CALL Cte_Update('$correo','$nombre','$telefono','$contra','$contraEn','$noticias')";
                                $updateresult = mysqli_query($conn9, $queryUpdate);
-                               echo $queryUpdate;
-
-
-                               
+                               echo $updateresult;
                               // Configura el servidor SMTP
                                 $mail->isSMTP();
                                 $mail->Host       = 'smtp.hostinger.com';  // Cambia esto por tu servidor SMTP
