@@ -7,7 +7,7 @@ let registroLink = document.getElementById("registroLink");
 let popup = document.getElementById('popupContainer');
 let popupclose = document.getElementById('closePopup');
 let btn_recuperar = document.getElementById('btn_Recuperar');
-let bloq = true;
+var bloquearEnvio = false;
 let filtro = obtenerParametroURL('filter');
 
 function obtenerParametroURL(nombre) {
@@ -23,20 +23,24 @@ if (filtro === 'recovery') {
 popupclose.onclick = function () {
     popup.style.display = 'none';
 };
-btn_recuperar.onclick = function () {
-    if (bloq) {
-        bloq = false;
-        event.preventDefault();
-        btn_recuperar.disabled = true;
+registroLink.addEventListener("click", registroclik);
+btn_recuperar.addEventListener("click", recuperar);
+
+function recuperar() {
+    if (!bloquearEnvio) { // Verificar si no se está bloqueando el envío
+        bloquearEnvio = true; // Bloquear el envío de la solicitud
+        btn_recuperar.disabled = true; // Desactivar el botón
 
         var correorec = document.getElementById("correorec").value;
         var correoError = document.getElementById("correoError");
 
         if (correorec === "") {
             correoError.textContent = "Por favor, ingresa tu correo electrónico.";
+            habilitarEnvio(); // Habilitar el envío de la solicitud
             return false;
         } else if (!/^\w+@\w+.com$/.test(correorec)) {
             correoError.textContent = "Por favor, ingresa un correo electrónico válido.";
+            habilitarEnvio(); // Habilitar el envío de la solicitud
             return false;
         } else {
             correoError.textContent = "";
@@ -51,32 +55,24 @@ btn_recuperar.onclick = function () {
                         console.log(data);
                         alert(data);
                     } catch (error) {
-                        // Bloque de código que se ejecuta si se lanza una excepción dentro del bloque try
                         console.log('Se ha producido un error:', error.message);
                     }
-
-
                 },
                 error: function (xhr, status, error) {
                     console.error(status + ': ' + error);
+                },
+                complete: function () {
+                    habilitarEnvio(); // Habilitar el envío de la solicitud después de completar
                 }
             });
-
-
-
-
-
-
         }
-        btn_recuperar.disabled = false;
-        bloq = true;
     }
-   
-
-
 }
-registroLink.addEventListener("click", registroclik);
 
+function habilitarEnvio() {
+    bloquearEnvio = false; // Permitir el envío de la solicitud
+    btn_recuperar.disabled = false; // Habilitar el botón
+}
 function registroclik(){
     if (window.self !== window.top) {
         window.parent.location.href = '../Account/Register.html';
