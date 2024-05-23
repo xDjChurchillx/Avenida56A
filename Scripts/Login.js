@@ -14,6 +14,7 @@ var bloquearEnvio = false;
 let filtro = obtenerParametroURL('filter');
 
 function obtenerParametroURL(nombre) {
+    console.log(nombre);
     nombre = nombre.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
     var regex = new RegExp('[\\?&]' + nombre + '=([^&#]*)');
     var resultados = regex.exec(location.search);
