@@ -60,18 +60,18 @@ function recuperar() {
         btn_recuperar.disabled = true; // Desactivar el botón
 
         var correorec = document.getElementById("correorec").value;
-        var correoError = document.getElementById("correoError");
+        var correoError2 = document.getElementById("correoError2");
 
         if (correorec === "") {
-            correoError.textContent = "Por favor, ingresa tu correo electrónico.";
+            correoError2.textContent = "Por favor, ingresa tu correo electrónico.";
             habilitarEnvio(); // Habilitar el envío de la solicitud
             return false;
         } else if (!/^\w+@\w+.com$/.test(correorec)) {
-            correoError.textContent = "Por favor, ingresa un correo electrónico válido.";
+            correoError2.textContent = "Por favor, ingresa un correo electrónico válido.";
             habilitarEnvio(); // Habilitar el envío de la solicitud
             return false;
         } else {
-            correoError.textContent = "";
+            correoError2.textContent = "";
 
             $.ajax({
                 url: 'Proc_Recuperar.php',
