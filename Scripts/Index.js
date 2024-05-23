@@ -7,6 +7,7 @@ let css = '';
 
 $(document).ready(function () {
     btn_sub.onclick = function () {
+        event.preventDefault();
         var correosub = document.getElementById("correosub").value;
         $.ajax({
             url: 'Account/Proc_Suscribirse.php',
