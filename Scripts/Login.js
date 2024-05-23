@@ -120,7 +120,7 @@ function cambiar() {
                 success: function (data) {
                     try {
                         var data2 = data.trim();
-                        var lineas = data2.split('\n');
+                        var lineas = data2.split('/\n/');
                         if (lineas[0] == "0") {
 
 
