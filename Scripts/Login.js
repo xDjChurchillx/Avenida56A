@@ -38,8 +38,10 @@ $(document).ready(function () {
                     if (!isNullOrEmpty(correorecL)) {
                         if (nombrelog === '-1') {
                             var correorec2 = document.getElementById("correoFinal");
-                            correorec2.value = correorecL;                           
-                            correorec2.focus();
+                            correorec2.value = correorecL;
+                            correorec2.readOnly = true;
+                            var lbl_correo = document.getElementById("lbl_correo");
+                            lbl_correo.classList.add("active-label");
                         }
 
                     }
@@ -90,32 +92,22 @@ function cambiar() {
         if (correoFinal === "") {
             correoError3.textContent = "Por favor, ingresa un correo electr\u00F3nico v\u00E1lido.";
             habilitarEnvio(); // Habilitar el envío de la solicitud
-            var correorec2 = document.getElementById("correoFinal");
-            correorec2.focus();
             return false;
         } else if (!/^\w+@\w+.com$/.test(correoFinal)) {
             correoError3.textContent = "Por favor, ingresa un correo electr\u00F3nico v\u00E1lido.";
             habilitarEnvio(); // Habilitar el envío de la solicitud
-            var correorec2 = document.getElementById("correoFinal");
-            correorec2.focus();
             return false;
         } else if (contraFinal === "") {
             pswrdError.textContent = "Por favor, ingresa una contrase\u00F1a v\u00E1lida.";
             habilitarEnvio(); // Habilitar el envío de la solicitud
-            var correorec2 = document.getElementById("correoFinal");
-            correorec2.focus();
             return false;
         } else if (contraFinal.length > 50) {
             pswrdError.textContent = "La contrase\u00F1a no puede tener m\u00E1s de 50 caracteres.";
             habilitarEnvio(); // Habilitar el envío de la solicitud
-            var correorec2 = document.getElementById("correoFinal");
-            correorec2.focus();
             return false;
         } else if (contraFinal.length < 8) {
             pswrdError.textContent = "La contrase\u00F1a no puede tener menos de 8 caracteres.";
             habilitarEnvio(); // Habilitar el envío de la solicitud
-            var correorec2 = document.getElementById("correoFinal");
-            correorec2.focus();
             return false;
         } else {
             correoError3.textContent = "";

@@ -80,6 +80,11 @@ form {
             font-size: 0.8em;
             color: #fff;
         }
+        .active-label {
+            transform: translateY(-7.5px);
+            font-size: 0.8em;
+            color: #fff;
+        }
     form a{
       color: white;
     }
