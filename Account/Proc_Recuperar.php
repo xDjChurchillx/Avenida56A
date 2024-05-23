@@ -44,7 +44,7 @@ require '../PHPMailer/SMTP.php';
 
                             try {
                                 $codigo =   $encriptador->encriptar($nombre, $clave, $iv);
-                                $codigo = substr($codigo, 0, 15);
+                                $codigo = substr($codigo, 0, 18);
                                 // Configura el servidor SMTP
                                 $mail->isSMTP();
                                 $mail->Host       = 'smtp.hostinger.com';  // Cambia esto por tu servidor SMTP
