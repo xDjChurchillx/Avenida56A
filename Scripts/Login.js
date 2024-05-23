@@ -16,9 +16,9 @@ let filtro = extraerFiltroDeUrl(location.search);
 
 function extraerFiltroDeUrl(url) {
     console.log(url);
-    var filt = url.indexOf('?filter=');
-    console.log(filt);
-    return filt;
+    var filtroIndex = url.indexOf('?filter=');
+    console.log(filtroIndex);
+    return filtroIndex;
 }
 
 popupclose.onclick = function () {
