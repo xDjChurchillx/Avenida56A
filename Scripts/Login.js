@@ -119,8 +119,8 @@ function cambiar() {
                 data: { correo: correoFinal, contra: contraFinal , codigo: filtro},
                 success: function (data) {
                     try {
-                        data = data.trim();
-                        var lineas = data.split('\n');
+                        var data2 = data.trim();
+                        var lineas = data2.split('\n');
                         if (lineas[0] == "0") {
 
 
