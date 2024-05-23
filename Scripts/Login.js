@@ -20,6 +20,7 @@ function obtenerParametroURL(nombre) {
     var regex = new RegExp('[\\?&]' + nombre + '=([^&#]*)');
     var resultados = regex.exec(location.search);
     console.log(resultados);
+    console.log(decodeURIComponent(resultados[1].replace(/\+/g, ' ')));
     return resultados === null ? '' : decodeURIComponent(resultados[1].replace(/\+/g, ' '));
 }
 
