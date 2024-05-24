@@ -194,11 +194,12 @@ function recuperar() {
                                     pswrd: ''
                                 }
                             ];
-                             localStorage.setItem('Avn56User', JSON.stringify(newAvn56User));                           
+                            localStorage.setItem('Avn56User', JSON.stringify(newAvn56User));
+                            popup.style.display = 'none';
                         }
 
                         alert(data);
-                        popup.style.display = 'none';
+                       
                     } catch (error) {
                         console.log('Se ha producido un error:', error.message);
                     }
