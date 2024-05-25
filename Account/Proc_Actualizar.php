@@ -17,11 +17,11 @@ require '../PHPMailer/SMTP.php';
         $nombre = isset($_GET['nombre']) ? $_GET['nombre'] : '';
         $telefono = isset($_GET['telefono']) ? $_GET['telefono'] : '';
         $contra = isset($_GET['contra']) ? $_GET['contra'] : '';
-        $contraEn = isset($_GET['contraEn']) ? $_GET['contraEn'] : '';
+        $contraEn = '';
         $noticias = isset($_GET['noticias']) ? $_GET['noticias'] : '';
         $codigo = isset($_GET['codigo']) ? $_GET['codigo'] : '';
         $nombrer = '';
-
+        $codigo2 = '';
         // Instancia un nuevo objeto PHPMailer
         $mail = new PHPMailer(true);
         // Instancia del encriptador
@@ -60,8 +60,11 @@ require '../PHPMailer/SMTP.php';
                           $nombreDia = substr($nombreDia, 0, 10);
                           $codigo2 = $codigo2 ."&". $nombreDia;
                          
+                         
+
                         if($codigo == $codigo2) {
                             try {
+                                      $contraEn = $encriptador->encriptar($contra, $clave, $iv);
                                       $email_exists = false;
                                       $queryUpdate = "CALL Cte_Update('$correo','$nombre','$telefono','$contra','$contraEn','$noticias')";
                                        $updateresult = mysqli_query($conn9, $queryUpdate);
@@ -69,10 +72,9 @@ require '../PHPMailer/SMTP.php';
                                                 // Verificar si el correo actual es igual al recibido en el formulario
                                                 if ($row2['Correo'] == $correo) {
                                                     $email_exists = true;
-                                                    $nombre = $row2['Nombre'];
-                                                    $contra = $row2['Pwsrd']; 
-                                                    $contraEn = $row2['EcrpPswrd'];
+                                                    $nombre = $row2['Nombre'];                                                  
                                                     $telefono = $row2['Telefono'];
+                                                    $noticias = $row2['Noticias'];
                                                     break; // Salir del bucle ya que hemos encontrado una coincidencia
                                                 }
                                          }
@@ -110,9 +112,9 @@ require '../PHPMailer/SMTP.php';
                                                             "correo" => $correo,
                                                             "nombre" => $nombre,
                                                             "telefono" => $telefono,
-                                                            "contra" => $contra,
-                                                            "encontra" => $contraEn,
-                                                        );
+                                                            "contra" => $contraEn,
+                                                            "noticias" => $noticias
+                                                         );
                                                                                                                 
                                                         $json_data = json_encode($data);                                                      
                                                         echo $json_data;

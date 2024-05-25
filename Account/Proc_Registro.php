@@ -1,7 +1,13 @@
 <?php
 
 require '../../Private/Credentials/DataBase/connection.php';
+require '../../Private/Credentials/encriptCred.php';
+require '../../Private/Encripter/encripter.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Instancia del encriptador
+     $encriptador = new Encriptador();
+
     try {
         // Recibir y limpiar los datos del formulario
         $nombre = htmlspecialchars($_POST["nombre"]);
@@ -10,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $telefono = htmlspecialchars($_POST["telefono"]);
         $recibir_noticias = isset($_POST["recibir_noticias"]) ? "True" : "False"; // Verificar si se ha marcado la casilla de recibir noticias
         $recordar = isset($_POST["recordar"]) ? "True" : "False"; // Verificar si se guarda el usuario
-        $contrasena_encriptada = password_hash($contrasena, PASSWORD_DEFAULT);
+        $contrasena_encriptada =  $encriptador->encriptar($contrasena, $clave, $iv);
 
             if ($conn->connect_error || $conn === null) {
                 echo "<script>alert('La base de datos ha fallado');

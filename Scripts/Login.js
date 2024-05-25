@@ -126,7 +126,7 @@ function cambiar() {
                                 {
                                     correo: res.correo,
                                     nombre: res.nombre,
-                                    pswrd: res.encontra
+                                    pswrd: res.contra
                                 }
                             ];
                             localStorage.clear();
