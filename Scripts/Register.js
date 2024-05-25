@@ -47,7 +47,7 @@
         confirmarContrasenaError.textContent = "Las contrase\u00F1as no coinciden.";
         isValid = false;
     }
-    let telefonoPattern = /^(\(\+\d{1,3}(\-\d+)*\)|\+\d)\d+(\-\d+)*$/; // Formato: (+XX)XXX-XXX-XXXX
+    let telefonoPattern = /^((\(\+\d{1,3}(\-\d+)*\)|\+\d)\d+(\-\d+)*)$|^(\-?\d){8}$/; // Formato: (+XX)XXX-XXX-XXXX
     if (!telefonoPattern.test(telefono)) {
         telefonoError.textContent = "El n\u00FAmero de teléfono debe tener el formato\n(+XXX)XXX-XXX-XXX.";
 
