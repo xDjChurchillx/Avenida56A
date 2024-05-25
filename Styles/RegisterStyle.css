@@ -87,9 +87,14 @@ input:-webkit-autofill:focus {
     input:-webkit-autofill,
     input:-webkit-autofill:hover,
     input:-webkit-autofill:focus,
-    input:-webkit-autofill:active {
+    input:-webkit-autofill:active,
+    input:-internal-autofill-previewed,
+    input:-internal-edge-autofill-previewed,
+    input:-internal-edge-excel-like-autofill-previewed {
        
-        -webkit-text-fill-color: white !important;
+        -webkit-text-fill-color: white !important; 
+        box-shadow: 0 0 0 30px white inset !important; 
+        color: white !important; 
     }
 
 form input[type="submit"]:active {
