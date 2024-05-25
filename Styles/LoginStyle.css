@@ -49,6 +49,7 @@ form {
     form .inputBox {
         position: relative;
         width: 100%;
+        color: white;
     }
 
         form .inputBox input {
@@ -92,18 +93,13 @@ input:-webkit-autofill,
 input:-webkit-autofill:focus {
     transition: background-color 0s 600000s, color 0s 600000s !important;
 }
-  
-        input:-webkit-autofill,
-        input:-webkit-autofill:hover,
-        input:-webkit-autofill:focus,
-        input:-webkit-autofill:active,
-        input:-internal-autofill-previewed,
-        input:-internal-edge-autofill-previewed,
-        input:-internal-edge-excel-like-autofill-previewed {
-            -webkit-text-fill-color: white !important;
-            box-shadow: 0 0 0 30px white inset !important;
-            color: white !important;
-        }
+
+form .inputBox input:focus ~ label,
+form .inputBox input:valid ~ label {
+    transform: translateY(-7.5px);
+    font-size: 0.8em;
+    color: #fff;
+}
 
 
 
