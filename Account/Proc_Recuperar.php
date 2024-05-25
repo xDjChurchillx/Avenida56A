@@ -48,9 +48,11 @@ require '../PHPMailer/SMTP.php';
                                 $codigo =   $encriptador->encriptar($nombre, $clave, $iv);
                                 $codigo = substr($codigo, 0, 10);
                                 $nombreDia = date("l");
+                                 echo $nombreDia;
                                 $nombreDia =  $encriptador->encriptar($nombreDia, $clave, $iv);
                                 $nombreDia = substr($nombreDia, 0, 10);
                                 $codigo = $codigo ."&". $nombreDia;
+                               
                                 // Configura el servidor SMTP
                                 $mail->isSMTP();
                                 $mail->Host       = 'smtp.hostinger.com';  // Cambia esto por tu servidor SMTP
