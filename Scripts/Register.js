@@ -49,7 +49,7 @@
     }
     let telefonoPattern = /^(\(\+\d{1,3}(\-\d+)*\)|\+\d)\d+(\-\d+)*$/; // Formato: (+XX)XXX-XXX-XXXX
     if (!telefonoPattern.test(telefono)) {
-        telefonoError.textContent = "El n\u00F4mero de teléfono debe tener el formato\n(+XXX)XXX-XXX-XXX.";
+        telefonoError.textContent = "El n\u00F3mero de teléfono debe tener el formato\n(+XXX)XXX-XXX-XXX.";
 
         isValid = false;
     }
