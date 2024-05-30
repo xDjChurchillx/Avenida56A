@@ -9,10 +9,7 @@ require '../PHPMailer/PHPMailer.php';
 require '../PHPMailer/SMTP.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Instancia un nuevo objeto PHPMailer
-        $mail = new PHPMailer(true);
-          // Instancia del encriptador
-        $encriptador = new Encriptador();
+  
 
     try {
         // Recibir y limpiar los datos del formulario
