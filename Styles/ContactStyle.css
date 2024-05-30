@@ -1,4 +1,9 @@
-﻿.contact-wrapper {
+﻿body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-wrapper {
     background: #222;
     display: flex;
     justify-content: center;
