@@ -1,12 +1,12 @@
 ﻿.contact-wrapper {
     background: #222;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
-    justify-content: space-between;
-    margin: 0 auto;
-    padding: 20px;
+    gap: 20px;
+    padding: 30px;
     position: relative;
-    max-width: 840px;
     color: white;
 }
 
