@@ -121,7 +121,7 @@ form .check-container {
 }
 
     form .check-container label {
-        margin: 5px;
+        margin: 10px;
         width: fit-content;
         height: fit-content;
     }
