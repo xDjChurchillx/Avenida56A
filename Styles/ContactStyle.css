@@ -117,8 +117,11 @@ form span {
 }
 
 form .check-container {
-    text-align: left; /* Alinea los elementos a la izquierda */
-    color: white; /* Cambia el color del texto a blanco */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
 }
 
     form .check-container label {
