@@ -15,7 +15,7 @@
     flex-direction: row;
     gap: 20px;
     padding: 30px;
-    padding-top: 50px;
+    padding-top: 70px;
     position: relative;
     color: white;
     position: relative;
@@ -23,7 +23,7 @@
 h2 {
     position: absolute;
     left: 40%;
-    top: 0%;
+    top: 5%;
 }
 form {
     width: 30vw;
