@@ -2,6 +2,7 @@ function validarFormulario() {
     let nombre = document.getElementById("nombre").value;
     let correo = document.getElementById("correo").value;
     let asunto = document.getElementById("asunto").value;
+
    
 
     let nombreError = document.getElementById("nombreError");
@@ -20,7 +21,7 @@ function validarFormulario() {
         nombreError.textContent = "El nombre no puede tener m\u00E1s de 20 caracteres.";
         isValid = false;
     }
-    if (nombre.length < 4) {
+    if (nombre.trim().length < 4) {
         nombreError.textContent = "El nombre no puede tener menos de 4 caracteres.";
         isValid = false;
     }
