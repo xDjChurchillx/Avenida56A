@@ -1,12 +1,12 @@
 <?php
 
-require '../../Private/Credentials/DataBase/connection.php';
-require '../../Private/Credentials/encriptCred.php';
-require '../../Private/Credentials/mailCred.php';
-require '../../Private/Encripter/encripter.php';
-require '../PHPMailer/Exception.php';
-require '../PHPMailer/PHPMailer.php';
-require '../PHPMailer/SMTP.php';
+require '../Private/Credentials/DataBase/connection.php';
+require '../Private/Credentials/encriptCred.php';
+require '../Private/Credentials/mailCred.php';
+require '../Private/Encripter/encripter.php';
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $correo = trim($correo);
         $asunto = trim($asunto);
 
-        
            
            echo "<script>alert('" . $responder . "');</script>";
       
