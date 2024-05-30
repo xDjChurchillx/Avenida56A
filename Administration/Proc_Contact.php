@@ -32,7 +32,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $correo = trim($correo);
         $asunto = trim($asunto);
 
-           
+          // Configura el servidor SMTP
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.hostinger.com';  // Cambia esto por tu servidor SMTP
+            $mail->SMTPAuth   = true;
+            $mail->Username   = $mail2; // Cambia esto por tu nombre de usuario SMTP
+            $mail->Password   = $Pmail2; // Cambia esto por tu contraseña SMTP
+            $mail->SMTPSecure = 'tls';
+            $mail->Port       = 587;
+
+            // Configura el remitente y el destinatario
+            $mail->setFrom($mail2 , 'User Message');
+            $mail->addAddress($correo, '');
+
+            // Configura el asunto y el cuerpo del correo
+            $mail->Subject = "User Message $nombre";
+            $mail->Body = "test1";
+
+            // Envía el correo
+            $mail->send();
            echo "<script>alert('" . $responder . "');</script>";
       
 
