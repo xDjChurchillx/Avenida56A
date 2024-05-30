@@ -17,8 +17,13 @@
     padding: 30px;
     position: relative;
     color: white;
+    position: relative;
 }
-
+h2 {
+    position: absolute;
+    left: 50%;
+   
+}
 form {
     width: 30vw;
     display: flex;
@@ -151,7 +156,7 @@ form .check-container {
 /* Begin Right Contact Page */
 .direct-contact-container {
     width: 30vw;
-    padding-top: 30vh;
+    padding-top: 1vh;
 }
 
 /* Location, Phone, Email Section */
