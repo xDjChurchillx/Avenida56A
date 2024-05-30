@@ -45,7 +45,7 @@ form {
             font-weight: 500;
             font-size: 1em;
         }
-
+        
         form .inputBox label {
             position: absolute;
             left: 0;
@@ -134,26 +134,18 @@ form .check-container {
         height: 20px;
     }
 
-
-
-
-.alt-send-button {
-    width: 400px;
-    height: 34px;
-    transition: all .2s ease-in-out;
+.form-control {
+    position: relative;
+    width: 100%;
+    background: #333;
+    border: none;
+    outline: none;
+    padding: 25px 10px 7.5px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1em;
 }
-
-.send-text {
-    display: block;
-    margin-top: 10px;
-    font: 700 12px 'Lato', sans-serif;
-    letter-spacing: 2px;
-}
-
-.alt-send-button:hover {
-    transform: translate3d(0px, -29px, 0px);
-}
-
 /* Begin Right Contact Page */
 .direct-contact-container {
     width: 30vw;
