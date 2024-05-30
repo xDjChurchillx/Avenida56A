@@ -77,7 +77,7 @@
             <h2>Contactanos</h2>
             <!-- Left contact page -->
 
-            <form id="Contactform" action="" method="post" onsubmit="return validarFormulario()">
+            <form id="Contactform" action="Administration/Proc_Contact.php" method="post" onsubmit="return validarFormulario()">
 
 
                 <div class="inputBox">
@@ -99,7 +99,7 @@
                 <span id="asuntoError" class="error-message"></span>
 
                 <div class="inputBox">
-                    <textarea class="form-control" rows="10" placeholder="Mensaje" name="message" required></textarea>
+                    <textarea id="mensaje" class="form-control" rows="10" placeholder="Mensaje" name="mensaje" required></textarea>
                 </div>
                 <span id="mensajeError" class="error-message"></span>
 
