@@ -137,6 +137,7 @@ form .check-container {
 .form-control {
     position: relative;
     width: 100%;
+    max-width: 100%;
     background: #333;
     border: none;
     outline: none;
