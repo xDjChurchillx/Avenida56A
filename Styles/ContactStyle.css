@@ -162,6 +162,7 @@ form .check-container {
 }
 
 .contact-text {
+    font: 300 18px 'Lato', sans-serif;
     margin-left: 10px;
     letter-spacing: 1.9px;
     color: #bbb;
