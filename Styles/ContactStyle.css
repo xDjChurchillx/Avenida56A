@@ -1,5 +1,6 @@
 ﻿main {
     padding-top: 10vh;
+    justify-content: center;
 }
 .contact-wrapper {
     width: -webkit-fit-content; 
