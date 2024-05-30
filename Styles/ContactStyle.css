@@ -143,7 +143,7 @@ form .check-container {
 
 /* Begin Right Contact Page */
 .direct-contact-container {
-    max-width: 400px;
+    width: 30vw;
 }
 
 /* Location, Phone, Email Section */
