@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit();
             }
            
-            echo $asunto;
+           echo "<script>alert('hh');</script>";
       
 
     } catch (Exception $ex) {
