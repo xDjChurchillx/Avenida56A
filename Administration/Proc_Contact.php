@@ -1,18 +1,9 @@
 <?php
 
-require '../../Private/Credentials/DataBase/connection.php';
-require '../../Private/Credentials/encriptCred.php';
-require '../../Private/Credentials/mailCred.php';
-require '../../Private/Encripter/encripter.php';
-require '../PHPMailer/Exception.php';
-require '../PHPMailer/PHPMailer.php';
-require '../PHPMailer/SMTP.php';
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Instancia un nuevo objeto PHPMailer
-        $mail = new PHPMailer(true);
-          // Instancia del encriptador
-        $encriptador = new Encriptador();
+  
 
     try {
         // Recibir y limpiar los datos del formulario
@@ -27,11 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $correo = trim($correo);
         $asunto = trim($asunto);
 
-            if ($conn10->connect_error || $conn10 === null) {
-                echo "<script>alert('La base de datos ha fallado');
-                 window.location.href = '/index.html';</script>";            
-                exit();
-            }
+        
            
            echo "<script>alert('" . $responder . "');</script>";
       
