@@ -2,6 +2,8 @@
     padding-top: 10vh;
 }
 .contact-wrapper {
+    width: -webkit-fit-content; 
+    width: -moz-fit-content; 
     width: fit-content;
     max-width: 70vw;
     background: #222;
