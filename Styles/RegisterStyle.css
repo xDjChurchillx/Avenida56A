@@ -114,19 +114,19 @@ form span {
 }
 
 form .check-container {
-    text-align: left; /* Alinea los elementos a la izquierda */
-    color: white; /* Cambia el color del texto a blanco */
+    color: white;
+    display: flex;
     align-items: center;
+    text-align: left;
 }
 
     form .check-container label {
-        margin: 10px;
+        margin: 1px;
         width: fit-content;
         height: fit-content;
     }
 
     form .check-container input {
-        margin-top: 5px;
         width: 20px;
         height: 20px;
     }

@@ -129,8 +129,7 @@ form .check-container {
         height: fit-content;
     }
 
-    form .check-container input {
-        margin-top: 5px;
+    form .check-container input {      
         width: 20px;
         height: 20px;
     }
