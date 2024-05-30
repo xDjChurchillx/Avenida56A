@@ -14,6 +14,7 @@ require '../PHPMailer/SMTP.php';
  try {
     
         $correo = isset($_GET['correo']) ? $_GET['correo'] : '';
+        $correo = trim($correo);
         $nombre = '';
         $codigo = '';
         // Instancia un nuevo objeto PHPMailer

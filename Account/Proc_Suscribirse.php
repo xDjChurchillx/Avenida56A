@@ -5,7 +5,7 @@ require '../../Private/Credentials/DataBase/connection.php';
  try {
     
         $correo = isset($_GET['correo']) ? $_GET['correo'] : '';
-       
+        $correo = trim($correo);
             if ($conn->connect_error || $conn === null) {
                 echo "<script>alert('La base de datos ha fallado');
                  window.location.href = '../index.html';</script>";            

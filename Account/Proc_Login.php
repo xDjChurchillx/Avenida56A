@@ -8,6 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $contrasena = htmlspecialchars($_POST["contrasena"]);
                 $recordar = isset($_POST["recordar"]) ? "True" : "False"; // Verificar si se guarda el usuario
                 $contrasena_encriptada = null;
+
+                 $correo = trim($correo);
                  //Llamar al procedimiento almacenado para la autenticacion
                 $queryListar = "CALL Cte_Login('$correo', '$contrasena')";
                 $result = mysqli_query($conn, $queryListar);

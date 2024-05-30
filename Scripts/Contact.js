@@ -17,27 +17,27 @@ function validarFormulario() {
     asuntoError.textContent = "";
 
     // Validaciones
-    if (nombre.length > 20) {
+    if (nombre.trim().length > 20) {
         nombreError.textContent = "El nombre no puede tener m\u00E1s de 20 caracteres.";
         isValid = false;
     }
-    if (nombre.trim().length < 4) {
-        nombreError.textContent = "El nombre no puede tener menos de 4 caracteres.";
+    if (nombre.trim().length < 3) {
+        nombreError.textContent = "El nombre no puede tener menos de 3 caracteres.";
         isValid = false;
     }
-    if (correo.length > 100) {
+    if (correo.trim().length > 100) {
         correoError.textContent = "El correo electr\u00D3nico no puede tener m\u00E1s de 100 caracteres.";
         isValid = false;
     }
 
-    if (asunto.length > 50) {
+    if (asunto.trim().length > 50) {
         asuntoError.textContent = "EL asunto no puede tener m\u00E1s de 50 caracteres.";
         isValid = false;
     }
    
     
     let correoPattern = /^\w+@\w+.com$/; // Formato:  email
-    if (!correoPattern.test(correo)) {
+    if (!correoPattern.test(correo.trim())) {
         correoError.textContent = "Por favor, ingresa un correo electr\u00F3nico v\u00E1lido.";
 
         isValid = false;

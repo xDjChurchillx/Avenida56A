@@ -90,15 +90,15 @@ function cambiar() {
         var contraFinal = document.getElementById("contraFinal").value;
         var pswrdError = document.getElementById("pswrdError");
 
-        if (correoFinal === "") {
+        if (correoFinal.trim().length === 0) {
             correoError3.textContent = "Por favor, ingresa un correo electr\u00F3nico v\u00E1lido.";
             habilitarEnvio(); // Habilitar el envío de la solicitud
             return false;
-        } else if (!/^\w+@\w+.com$/.test(correoFinal)) {
+        } else if (!/^\w+@\w+.com$/.test(correoFinal.trim())) {
             correoError3.textContent = "Por favor, ingresa un correo electr\u00F3nico v\u00E1lido.";
             habilitarEnvio(); // Habilitar el envío de la solicitud
             return false;
-        } else if (contraFinal === "") {
+        } else if (contraFinal.length === 0) {
             pswrdError.textContent = "Por favor, ingresa una contrase\u00F1a v\u00E1lida.";
             habilitarEnvio(); // Habilitar el envío de la solicitud
             return false;
@@ -167,11 +167,11 @@ function recuperar() {
         var correorec = document.getElementById("correorec").value;
         var correoError2 = document.getElementById("correoError2");
 
-        if (correorec === "") {
+        if (correorec.trim().length === 0) {
             correoError2.textContent = "Por favor, ingresa un correo electr\u00F3nico v\u00E1lido.";
             habilitarEnvio(); // Habilitar el envío de la solicitud
             return false;
-        } else if (!/^\w+@\w+.com$/.test(correorec)) {
+        } else if (!/^\w+@\w+.com$/.test(correorec.trim())) {
             correoError2.textContent = "Por favor, ingresa un correo electr\u00F3nico v\u00E1lido.";
             habilitarEnvio(); // Habilitar el envío de la solicitud
             return false;
@@ -242,7 +242,7 @@ function habilitarEnvio() {
     btn_cambiar.classList.remove("active-button");
 }
 function validarFormulario() {
-    correoL = document.getElementById("correo").value;
+    correoL = document.getElementById("correo").value.trim();
     contrasenaL = document.getElementById("contrasena").value;
     let isValid = true;
 

@@ -18,6 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $recordar = isset($_POST["recordar"]) ? "True" : "False"; // Verificar si se guarda el usuario
         $contrasena_encriptada =  $encriptador->encriptar($contrasena, $clave, $iv);
 
+        $nombre = trim($nombre);
+        $correo = trim($correo);
+        $telefono = trim($telefono);
+
             if ($conn->connect_error || $conn === null) {
                 echo "<script>alert('La base de datos ha fallado');
                  window.location.href = '../index.html';</script>";            

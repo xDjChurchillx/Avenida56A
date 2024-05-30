@@ -22,6 +22,12 @@ require '../PHPMailer/SMTP.php';
         $codigo = isset($_GET['codigo']) ? $_GET['codigo'] : '';
         $nombrer = '';
         $codigo2 = '';
+
+        $nombre = trim($nombre);
+        $correo = trim($correo);
+        $telefono = trim($telefono);
+
+
         // Instancia un nuevo objeto PHPMailer
         $mail = new PHPMailer(true);
         // Instancia del encriptador

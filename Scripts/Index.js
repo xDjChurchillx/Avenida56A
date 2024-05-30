@@ -13,12 +13,12 @@ $(document).ready(function () {
         var correosub = document.getElementById("correosub").value;
         let correoError = document.getElementById("correoError");
         var isValid = true;
-        if (correosub.length > 100) {
+        if (correosub.trim().length > 100) {
             correoError.textContent = "El correo electr\u00D3nico no puede tener m\u00E1s de 100 caracteres.";
             isValid = false;
         }
         let correoPattern = /^\w+@\w+.com$/; // Formato: aaa@aa.com
-        if (!correoPattern.test(correosub)) {
+        if (!correoPattern.test(correosub.trim())) {
             correoError.textContent = "El correo es invalido.";
 
             isValid = false;
