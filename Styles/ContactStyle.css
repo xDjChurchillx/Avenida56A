@@ -1,6 +1,8 @@
 ﻿main {
     padding-top: 10vh;
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 .contact-wrapper {
     width: -webkit-fit-content; 
