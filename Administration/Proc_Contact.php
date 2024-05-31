@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $correo = htmlspecialchars($_POST["correo"]);
         $asunto = htmlspecialchars($_POST["asunto"]);
         $mensaje = htmlspecialchars($_POST["mensaje"]);
-        $responder = isset($_POST["responder"]) ? "True" : "False";
+        $responder = isset($_POST["responder"]) ? "SI" : "NO";
        
 
         $nombre = trim($nombre);
@@ -43,11 +43,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Configura el remitente y el destinatario
             $mail->setFrom($mail2 , 'User Message');
-            $mail->addAddress($correo, '');
+            $mail->addAddress($mail2, '');
 
             // Configura el asunto y el cuerpo del correo
-            $mail->Subject = "User Message $nombre";
-            $mail->Body = "test1";
+            $mail->Subject = "User Message: $asunto";
+            $mail->Body = 
+"Usuario: $correo
+Mensaje: $mensaje
+
+El usuario $responder quiere recibir una respuesta
+";
 
             // Envía el correo
             $mail->send();
