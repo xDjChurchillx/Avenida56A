@@ -100,8 +100,10 @@ require '../PHPMailer/SMTP.php';
             line-height: 1.6;
             color: #333333;
         }
+
+
         .button {
-            padding: 10px;
+             padding: 10px;
             background-color: white;
             color: #000;
             font-weight: 600;
@@ -109,11 +111,6 @@ require '../PHPMailer/SMTP.php';
             letter-spacing: 0.05em;
             cursor: pointer;
         }
-
-        .button:hover {
-                background-color: #b4b4b4;
-            }
-
         .footer {
             text-align: center;
             font-size: 12px;
