@@ -69,16 +69,74 @@ require '../PHPMailer/SMTP.php';
 
                                 // Configura el asunto y el cuerpo del correo
                                 $mail->Subject = 'Account Recovery';
-                                $mail->Body = "Hola $nombre,
-
-                                               Hemos detectado que has solicitado restablecer tu contraseña en nuestro sitio web. Por favor, haz clic en el siguiente enlace para definir una nueva contraseña:
-
-                                               $link
-
-                                               Si no solicitaste este cambio, por favor ignora este mensaje.
- 
-                                               Gracias,
-                                               El equipo de Avenida56A";
+                               $mail->Body = "
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            color: #333333;
+        }
+        .content {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333333;
+        }
+        .button {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #4CAF50;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h1>Restablecer Contraseña</h1>
+        </div>
+        <div class='content'>
+            <p>Hola $nombre,</p>
+            <p>Hemos detectado que has solicitado restablecer tu contraseña en nuestro sitio web. Por favor, haz clic en el siguiente enlace para definir una nueva contraseña:</p>
+            <a href='$link' class='button'>Restablecer Contraseña</a>
+            <p>Si no solicitaste este cambio, por favor ignora este mensaje.</p>
+            <p>Gracias,<br>El equipo de Avenida56A</p>
+        </div>
+        <div class='footer'>
+            <p>© 2024 Avenida56A. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>
+";
 
                                 // Envía el correo
                                 $mail->send();
