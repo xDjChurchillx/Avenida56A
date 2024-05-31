@@ -112,7 +112,7 @@ require '../PHPMailer/SMTP.php';
 <body>
     <div class='container'>
         <div class='header'>
-            <h1>Recupera tu cuenta cambiando la contraseña</h1>
+            <h1>Recuperacion de cuenta</h1>
         </div>
         <div class='content'>
             <p>Hola $nombre,</p>
@@ -122,7 +122,7 @@ require '../PHPMailer/SMTP.php';
             <p>Gracias,<br>El equipo de Avenida56A</p>
         </div>
         <div class='footer'>
-            <p>© 2024 Avenida56A. Todos los derechos reservados.</p>
+            <p>Avenida56A.</p>
         </div>
     </div>
 </body>
