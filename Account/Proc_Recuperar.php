@@ -100,16 +100,19 @@ require '../PHPMailer/SMTP.php';
             line-height: 1.6;
             color: #333333;
         }
-
-
         .button {
-             padding: 10px;
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 10px;
             background-color: white;
             color: #000;
             font-weight: 600;
             font-size: 1.35em;
             letter-spacing: 0.05em;
             cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
         }
         .footer {
             text-align: center;
