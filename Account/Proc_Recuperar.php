@@ -102,15 +102,12 @@ require '../PHPMailer/SMTP.php';
         }
         .button {
             display: block;
-            width: auto;
+            width: 200px;
             margin: 30px auto;
             padding: 10px;
+            text-align: center;
             background-color: #222;
-            color: #000;
-            font-weight: 600;
-            font-size: 1.35em;
-            letter-spacing: 0.05em;
-            cursor: pointer;
+            color: #ffffff;
             text-decoration: none;
             border-radius: 5px;
         }
