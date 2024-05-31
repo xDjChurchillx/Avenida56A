@@ -69,6 +69,7 @@ require '../PHPMailer/SMTP.php';
 
                                 // Configura el asunto y el cuerpo del correo
                                 $mail->Subject = 'Account Recovery';
+                                $mail->isHTML(true);  
                                $mail->Body = "
 <html>
 <head>
@@ -138,9 +139,15 @@ require '../PHPMailer/SMTP.php';
 </html>
 ";
 
+                                
+
                                 // Envía el correo
-                                $mail->send();
-                                 echo 'Correo de recuperacion enviado, porfavor revisa tu correo';
+                                if ($mail->send()) {
+                                   echo 'Correo de recuperacion enviado, porfavor revisa tu correo';
+                                } else {
+                                    echo 'Error al enviar el correo: ' . $mail->ErrorInfo;
+                                }                               
+                                
                             } catch (Exception $e) {
                                 echo 'Error al recuperar cuenta';
                             }
