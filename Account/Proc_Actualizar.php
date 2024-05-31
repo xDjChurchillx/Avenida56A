@@ -61,7 +61,7 @@ require '../PHPMailer/SMTP.php';
                       //$encriptador->desencriptar('', $clave, $iv);;
                           $codigo2 = $encriptador->encriptar($nombrer, $clave, $iv);                         
                           $codigo2 = substr($codigo2, 0, 10);
-                          $nombreDia = date("l");
+                          $nombreDia = date("d/m/Y");
                           $nombreDia =  $encriptador->encriptar($nombreDia, $clave, $iv);
                           $nombreDia = substr($nombreDia, 0, 10);
                           $codigo2 = $codigo2 ."&". $nombreDia;

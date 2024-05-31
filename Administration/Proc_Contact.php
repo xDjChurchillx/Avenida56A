@@ -47,9 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Configura el asunto y el cuerpo del correo
             $mail->Subject = "User Message: $asunto";
-            $mail->Body = 
+            $mail->Body =
+//Body del mensaje            
 "Usuario: $correo
-Mensaje: $mensaje
+Mensaje:
+$mensaje
 
 El usuario $responder quiere recibir una respuesta
 ";

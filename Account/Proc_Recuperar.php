@@ -48,11 +48,12 @@ require '../PHPMailer/SMTP.php';
                             try {
                                 $codigo =   $encriptador->encriptar($nombre, $clave, $iv);
                                 $codigo = substr($codigo, 0, 10);
-                                $nombreDia = date("l");
+                                $nombreDia = date("d/m/Y");
                                 $nombreDia =  $encriptador->encriptar($nombreDia, $clave, $iv);
                                 $nombreDia = substr($nombreDia, 0, 10);
                                 $codigo = $codigo ."&". $nombreDia;
-                               
+                                $link = 'https://avenida56a.com/Account/Login.html?filter=%';
+                                $link = $link.$codigo;
                                 // Configura el servidor SMTP
                                 $mail->isSMTP();
                                 $mail->Host       = 'smtp.hostinger.com';  // Cambia esto por tu servidor SMTP
@@ -72,7 +73,7 @@ require '../PHPMailer/SMTP.php';
 
                                                Hemos detectado que has solicitado restablecer tu contraseña en nuestro sitio web. Por favor, haz clic en el siguiente enlace para definir una nueva contraseña:
 
-                                               'https://avenida56a.com/Account/Login.html?filter=%$codigo'
+                                               $link
 
                                                Si no solicitaste este cambio, por favor ignora este mensaje.
  
