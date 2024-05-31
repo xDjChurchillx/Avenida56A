@@ -100,17 +100,7 @@ require '../PHPMailer/SMTP.php';
             line-height: 1.6;
             color: #333333;
         }
-        .button {
-            display: block;
-            width: 200px;
-            margin: 30px auto;
-            padding: 10px;
-            text-align: center;
-            background-color: #222;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 5px;
-        }
+      
         .footer {
             text-align: center;
             font-size: 12px;
@@ -122,12 +112,12 @@ require '../PHPMailer/SMTP.php';
 <body>
     <div class='container'>
         <div class='header'>
-            <h1>Restablecer Contraseña</h1>
+            <h1>Recupera tu cuenta cambiando la contraseña</h1>
         </div>
         <div class='content'>
             <p>Hola $nombre,</p>
             <p>Hemos detectado que has solicitado restablecer tu contraseña en nuestro sitio web. Por favor, haz clic en el siguiente enlace para definir una nueva contraseña:</p>
-            <a href='$link' class='button'>Restablecer Contraseña</a>
+            <a href='$link' style='display: block; width: 200px; margin: 30px auto; padding: 10px; text-align: center; background-color: #222; color: white; text-decoration: none; border-radius: 5px;'>Restablecer Contraseña</a>
             <p>Si no solicitaste este cambio, por favor ignora este mensaje.</p>
             <p>Gracias,<br>El equipo de Avenida56A</p>
         </div>
