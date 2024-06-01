@@ -5,6 +5,7 @@ let Logout = document.querySelector("#CerrarSes");
 let Login = document.querySelector("#alogin");
 let Perfil = document.querySelector("#Perfil");
 let Tienda = document.querySelector("#Tienda");
+let Idioma = document.querySelector("#Idioma");
 //busqueda
 let Filtro = document.querySelector("#Filtro");
 let Lupa = document.querySelector("#Lupa");
@@ -66,6 +67,7 @@ if (menu_icon_box !== null) {
         menu_box.classList.toggle("active_menu-box");
         Perfil.classList.remove("active");
         Tienda.classList.remove("active");
+        Idioma.classList.remove("active");
     }
 }
 if (Logout !== null) {
@@ -82,6 +84,7 @@ if (document !== null ) {
             menu_box.classList.remove("active_menu-box");
             Perfil.classList.remove("active");
             Tienda.classList.remove("active");
+            Idioma.classList.remove("active");
         }
     }
 }
@@ -165,6 +168,11 @@ if (Perfil !== null) {
 if (Tienda !== null) {
     Tienda.onclick = function (e) {
         Tienda.classList.toggle("active");
+    }
+}
+if (Idioma !== null) {
+    Idioma.onclick = function (e) {
+        Idioma.classList.toggle("active");
     }
 }
 if (back !== null) {
