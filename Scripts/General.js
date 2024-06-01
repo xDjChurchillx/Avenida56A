@@ -1,6 +1,8 @@
 ﻿let menu_icon_box = document.querySelector(".menu-icon");
 let menu_box = document.querySelector(".menu-box");
+let menu2 = document.querySelectorAll(".menu2");
 let back = document.querySelectorAll(".back");
+let back2 = document.querySelectorAll(".back2");
 let Logout = document.querySelector("#CerrarSes");
 let Login = document.querySelector("#alogin");
 let Perfil = document.querySelector("#Perfil");
@@ -67,7 +69,7 @@ if (menu_icon_box !== null) {
         menu_box.classList.toggle("active_menu-box");
         Perfil.classList.remove("active");
         Tienda.classList.remove("active");
-        Idioma.classList.remove("active");
+        Idioma.classList.remove("active2");
     }
 }
 if (Logout !== null) {
@@ -84,7 +86,7 @@ if (document !== null ) {
             menu_box.classList.remove("active_menu-box");
             Perfil.classList.remove("active");
             Tienda.classList.remove("active");
-            Idioma.classList.remove("active");
+            Idioma.classList.remove("active2");
         }
     }
 }
@@ -172,7 +174,7 @@ if (Tienda !== null) {
 }
 if (Idioma !== null) {
     Idioma.onclick = function (e) {
-        Idioma.classList.toggle("active");
+        Idioma.classList.toggle("active2");
     }
 }
 if (back !== null) {
@@ -180,7 +182,18 @@ if (back !== null) {
         elemento.onclick = volverMenu;
     });
 }
+if (back2 !== null) {
+    back2.forEach(elemento => {
+        elemento.onclick = volverMenu2;
+    });
+}
 
 function volverMenu() {
     menu_box.classList.remove("active");
+}
+function volverMenu2() {
+   
+    menu2.forEach(elemento => {
+        elemento.classList.remove("active2");
+    });
 }
