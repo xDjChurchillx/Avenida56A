@@ -15,11 +15,11 @@
     flex-direction: row;
     gap: 20px;
     padding: 30px;
-    padding-top: 10vh;
+    padding-top: 5vh;
     position: relative;
     color: white;
     position: relative;
-    overflow-x:scroll;
+    overflow-x: auto;
 }
 h2 {
     position: absolute;
