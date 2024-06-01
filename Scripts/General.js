@@ -8,7 +8,7 @@ let Login = document.querySelector("#alogin");
 let Perfil = document.querySelector("#Perfil");
 let Tienda = document.querySelector("#Tienda");
 let Idioma = document.querySelector("#Idioma");
-6
+0/0
 //busqueda
 let Filtro = document.querySelector("#Filtro");
 let Lupa = document.querySelector("#Lupa");
