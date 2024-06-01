@@ -1,6 +1,5 @@
 ﻿let menu_icon_box = document.querySelector(".menu-icon");
 let menu_box = document.querySelector(".menu-box");
-let menu_box = document.querySelector(".hidden-menu");
 let back = document.querySelectorAll(".back");
 let back = document.querySelectorAll(".back2");
 let Logout = document.querySelector("#CerrarSes");
@@ -193,5 +192,5 @@ function volverMenu() {
     menu_box.classList.remove("activemenu");
 }
 function volverMenu2() {
-    menu_box2.classList.remove("activemenu");
+   Idioma.classList.remove("activemenu");
 }
