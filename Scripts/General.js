@@ -1,12 +1,10 @@
 ﻿let menu_icon_box = document.querySelector(".menu-icon");
 let menu_box = document.querySelector(".menu-box");
 let back = document.querySelectorAll(".back");
-let back2 = document.querySelectorAll(".back2");
 let Logout = document.querySelector("#CerrarSes");
 let Login = document.querySelector("#alogin");
 let Perfil = document.querySelector("#Perfil");
 let Tienda = document.querySelector("#Tienda");
-let Idioma = document.querySelector("#Idioma");
 //busqueda
 let Filtro = document.querySelector("#Filtro");
 let Lupa = document.querySelector("#Lupa");
@@ -64,11 +62,10 @@ function isNullOrEmpty(value) {
 }
 if (menu_icon_box !== null) {
     menu_icon_box.onclick = function () {
-        menu_icon_box.classList.toggle("activemenu");
+        menu_icon_box.classList.toggle("active");
         menu_box.classList.toggle("active_menu-box");
-        Perfil.classList.remove("activemenu");
-        Tienda.classList.remove("activemenu");
-        Idioma.classList.remove("activemenu");
+        Perfil.classList.remove("active");
+        Tienda.classList.remove("active");
     }
 }
 if (Logout !== null) {
@@ -81,11 +78,10 @@ if (Logout !== null) {
 if (document !== null ) {
     document.onclick = function (e) {
         if (!menu_icon_box.contains(e.target) && !menu_box.contains(e.target)) {
-            menu_icon_box.classList.remove("activemenu");
+            menu_icon_box.classList.remove("active");
             menu_box.classList.remove("active_menu-box");
-            Perfil.classList.remove("activemenu");
-            Tienda.classList.remove("activemenu");
-            Idioma.classList.remove("activemenu");
+            Perfil.classList.remove("active");
+            Tienda.classList.remove("active");
         }
     }
 }
@@ -163,17 +159,12 @@ function closeSearch() {
 
 if (Perfil !== null) {
     Perfil.onclick = function (e) {
-        Perfil.classList.toggle("activemenu");
+        Perfil.classList.toggle("active");
     }
 }
 if (Tienda !== null) {
     Tienda.onclick = function (e) {
-        Tienda.classList.toggle("activemenu");
-    }
-}
-if (Idioma !== null) {
-    Idioma.onclick = function (e) {
-        Idioma.classList.toggle("activemenu");
+        Tienda.classList.toggle("active");
     }
 }
 if (back !== null) {
@@ -181,16 +172,7 @@ if (back !== null) {
         elemento.onclick = volverMenu;
     });
 }
-if (back2 !== null) {
-    back2.forEach(elemento => {
-        elemento.onclick = volverMenu2;
-    });
-}
-
 
 function volverMenu() {
-    menu_box.classList.remove("activemenu");
-}
-function volverMenu2() {
-   Idioma.classList.remove("activemenu");
+    menu_box.classList.remove("active");
 }
