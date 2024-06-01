@@ -1,5 +1,5 @@
 ﻿main {
-    padding-top: 15vh;
+    padding-top: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,10 +15,11 @@
     flex-direction: row;
     gap: 20px;
     padding: 30px;
-    padding-top: 70px;
+    padding-top: 10vh;
     position: relative;
     color: white;
     position: relative;
+    overflow-x:scroll;
 }
 h2 {
     position: absolute;
