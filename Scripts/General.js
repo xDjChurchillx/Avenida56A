@@ -199,5 +199,5 @@ function volverMenu() {
 }
 function volverMenu2() {
    
-    hiddenMenu.classList.remove("active2");
+    hiddenMenu.classList.toggle("active2");
 }
