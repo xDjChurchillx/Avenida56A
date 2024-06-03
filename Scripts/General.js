@@ -165,7 +165,7 @@ function closeSearch() {
 
 if (Perfil !== null) {
     Perfil.onclick = function (e) {
-        Perfil.classList.add("active");
+        Perfil.classList.toggle("active");
     }
 }
 if (Tienda !== null) {
