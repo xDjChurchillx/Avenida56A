@@ -179,7 +179,7 @@ if (Tienda !== null) {
 }
 if (Idioma !== null) {
     Idioma.onclick = function (e) {
-        hiddenMenu.classList.toggle("active");
+        hiddenMenu.classList.toggle("sub-active");
         submenuOpen = true;
     }
 }
@@ -199,5 +199,5 @@ function volverMenu() {
 }
 function volverMenu2() {
    
-    hiddenMenu.classList.remove("active");
+    hiddenMenu.classList.remove("sub-active");
 }
