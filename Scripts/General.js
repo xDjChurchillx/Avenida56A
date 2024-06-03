@@ -1,5 +1,6 @@
 ﻿let menu_icon_box = document.querySelector(".menu-icon");
 let menu_box = document.querySelector(".menu-box");
+let hiddenMenu = document.querySelector(".hidden-menu");
 let menu2 = document.querySelectorAll(".menu2");
 let back = document.querySelectorAll(".back");
 let back2 = document.querySelectorAll(".back2");
@@ -178,7 +179,7 @@ if (Tienda !== null) {
 }
 if (Idioma !== null) {
     Idioma.onclick = function (e) {
-        Idioma.classList.toggle("active2");
+        hiddenMenu.classList.toggle("active2");
         submenuOpen = true;
     }
 }
@@ -198,7 +199,5 @@ function volverMenu() {
 }
 function volverMenu2() {
    
-    menu2.forEach(elemento => {
-        elemento.classList.remove("active2");
-    });
+    hiddenMenu.classList.remove("active2");
 }
