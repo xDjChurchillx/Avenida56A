@@ -8,7 +8,7 @@ let Login = document.querySelector("#alogin");
 let Perfil = document.querySelector("#Perfil");
 let Tienda = document.querySelector("#Tienda");
 let Idioma = document.querySelector("#Idioma");
-0/0
+
 //busqueda
 let Filtro = document.querySelector("#Filtro");
 let Lupa = document.querySelector("#Lupa");
@@ -165,7 +165,7 @@ function closeSearch() {
 
 if (Perfil !== null) {
     Perfil.onclick = function (e) {
-        Perfil.classList.toggle("active");
+        Perfil.classList.add("active");
     }
 }
 if (Tienda !== null) {
