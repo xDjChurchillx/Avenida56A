@@ -3,7 +3,9 @@ let filtro = obtenerParametroURL('filter');
 let Filtroelemnt = document.querySelector("#Filtro");
 let loginFrame = document.getElementById("loginframe");
 let popup = document.getElementById('popupContainer');
+let buycontainer = document.getElementById('popupContainer2');
 let popupclose = document.getElementById('closePopup');
+let popupclose2 = document.getElementById('closePopup2');
 let cat = '-1';
 let sexo = '-1';
 let listaCompras = [];
@@ -101,14 +103,26 @@ $(document).ready(function () {
                         img.setAttribute('id', imgName);
                         /* img.src = imgs.Imagenes[0];*/
                         css += '#' + imgName + ':hover {content: url(\'' + imgs.Imagenes[1] + '\');}\n';
+                        // Agregar el evento onclick
+                        img.addEventListener('click', function () {
+                            Ver(producto);
+                        });
 
                         // Crear un elemento h3 con el nombre del producto
                         var h3 = document.createElement('h3');
                         h3.textContent = producto.Product;
+                        // Agregar el evento onclick
+                        h3.addEventListener('click', function () {                           
+                            Ver(producto);
+                        });
 
-                        // Crear un elemento p con la descripción del producto
+                        // Crear un elemento p para el precio del producto
                         var p = document.createElement('p');
                         p.textContent = producto.Price;
+                        // Agregar el evento onclick
+                        p.addEventListener('click', function () {
+                            Ver(producto);
+                        });
 
                         // Crear un botón para cada producto
                         var button = document.createElement('button');
@@ -158,6 +172,10 @@ $(document).ready(function () {
 
 
 });
+function Ver(producto) {
+
+
+}
 // Método para manejar el clic en el botón
 function agregarAlCarrito(producto) {
     var listaproductosJSON;
