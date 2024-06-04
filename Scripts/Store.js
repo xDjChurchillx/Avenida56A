@@ -26,6 +26,9 @@ function obtenerParametroURL(nombre) {
 popupclose.onclick = function () {
     popup.style.display = 'none';
 };
+popupclose2.onclick = function () {
+    buycontainer.style.display = 'none';
+};
 loginFrame.onload = function () {
     const myframe = loginFrame.contentDocument;
     myframe.querySelector('header').remove();  
@@ -174,7 +177,7 @@ $(document).ready(function () {
 });
 function Ver(producto) {
 
-
+    buycontainer.style.display = 'block';
 }
 // Método para manejar el clic en el botón
 function agregarAlCarrito(producto) {
