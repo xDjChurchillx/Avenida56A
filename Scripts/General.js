@@ -10,6 +10,7 @@ let Perfil = document.querySelector("#Perfil");
 let Tienda = document.querySelector("#Tienda");
 let Idioma = document.querySelector("#Idioma");
 let submenuOpen = false;
+let submenuBack = false;
 //busqueda
 let Filtro = document.querySelector("#Filtro");
 let Lupa = document.querySelector("#Lupa");
@@ -179,8 +180,11 @@ if (Tienda !== null) {
 }
 if (Idioma !== null) {
     Idioma.onclick = function (e) {
-        hiddenMenu.classList.toggle("sub-active");
+        if (!submenuBack) {
+            hiddenMenu.classList.toggle("sub-active");
+        }       
         submenuOpen = true;
+        submenuBack = false;
     }
 }
 if (back !== null) {
@@ -198,6 +202,6 @@ function volverMenu() {
     menu_box.classList.remove("active");
 }
 function volverMenu2() {
-   
+    submenuBack = true;  
     hiddenMenu.classList.remove("sub-active");
 }
